@@ -43,7 +43,8 @@ export default function Sidebar({ menuItems }: SidebarProps) {
           <img
             src="/logo.png"
             alt="JáRespondi"
-            className="h-14 object-contain"
+            className="h-auto"
+            style={{marginLeft: '53px', width: '100px', height: '80px', objectFit: 'fill'}}
           />
         )}
         <button

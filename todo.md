@@ -44,7 +44,7 @@
 - [x] Ações rápidas
 - [x] Alertas recentes
 - [x] Menu hamburguer mobile
-- [x] Logo real na sidebar
+- [x] Logo real na sidebar (100x80px, margem esquerda 53px)
 - [x] Responsividade completa
 
 ### WhatsApp & Agentes
