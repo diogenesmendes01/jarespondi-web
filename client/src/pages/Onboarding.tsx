@@ -152,9 +152,8 @@ export default function Onboarding() {
           {/* Step 1: Welcome */}
           {currentStep === 1 && (
             <div className="text-center space-y-6 md:space-y-8">
-              <div className="text-5xl md:text-8xl mb-4 md:mb-8">🎉</div>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] px-4">
-                Bem-vindo! 🎉
+                Bem-vindo!
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-[#6B7280] px-4">
                 Em menos de 5 minutos você terá seu assistente IA funcionando
@@ -163,7 +162,7 @@ export default function Onboarding() {
               {/* Video Placeholder */}
               <div className="w-full max-w-[600px] aspect-video mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-4xl md:text-6xl mb-4">▶️</div>
+                  <div className="text-4xl md:text-6xl mb-4">▶</div>
                   <p className="text-sm md:text-base text-[#6B7280]">Vídeo de Introdução</p>
                 </div>
               </div>
@@ -200,7 +199,7 @@ export default function Onboarding() {
             <div className="space-y-8">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827] mb-4">
-                  Conecte seu Primeiro WhatsApp 📱
+                  Conecte seu Primeiro WhatsApp
                 </h2>
                 <p className="text-base text-[#6B7280]">
                   Escolha como você quer conectar seu número
@@ -325,7 +324,6 @@ export default function Onboarding() {
                 <div className="w-[300px] h-[300px] bg-white border-2 border-[#E5E7EB] rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
                   <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-4xl mb-2">📱</div>
                       <p className="text-sm text-[#6B7280]">QR Code</p>
                     </div>
                   </div>
@@ -367,7 +365,11 @@ export default function Onboarding() {
           {/* Step 4: Success */}
           {currentStep === 4 && (
             <div className="text-center space-y-8">
-              <div className="text-[120px]">✅</div>
+              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto bg-[#10B981] rounded-full flex items-center justify-center">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
               <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827]">
                 WhatsApp Conectado com Sucesso!
               </h2>
@@ -394,7 +396,7 @@ export default function Onboarding() {
             <div className="space-y-8">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827] mb-4">
-                  Configure Seu Primeiro Agente 🤖
+                  Configure Seu Primeiro Agente
                 </h2>
               </div>
 
@@ -498,7 +500,11 @@ export default function Onboarding() {
           {/* Step 6: Final */}
           {currentStep === 6 && (
             <div className="text-center space-y-8">
-              <div className="text-[120px]">🎉</div>
+              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto bg-[#FF5A2A] rounded-full flex items-center justify-center">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               <h1 className="text-4xl font-bold text-[#111827]">
                 Tudo Pronto! Você está no ar!
               </h1>
@@ -515,7 +521,7 @@ export default function Onboarding() {
                   +55 11 99999-9999
                 </p>
                 <Button className="h-12 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold">
-                  📱 Abrir WhatsApp
+                  Abrir WhatsApp
                 </Button>
               </div>
 
@@ -545,7 +551,7 @@ export default function Onboarding() {
                   onClick={() => setLocation("/dashboard")}
                   className="h-12 md:h-14 px-8 md:px-12 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base md:text-lg font-semibold rounded-xl"
                 >
-                  🚀 Ir para o Dashboard
+                  Ir para o Dashboard
                 </Button>
               </div>
             </div>

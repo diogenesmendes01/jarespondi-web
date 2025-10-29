@@ -200,3 +200,5 @@
 
 - [x] Bug Onboarding: Logo quebrada (não está carregando)
 - [x] Bug Onboarding: Remover texto "JáRespondi" duplicado
+
+- [x] Remover todos os emojis do Onboarding
