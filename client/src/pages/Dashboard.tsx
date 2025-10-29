@@ -118,11 +118,11 @@ export default function Dashboard() {
       >
         {/* Logo */}
         <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
-          {sidebarCollapsed ? (
-            <div className="text-2xl font-bold text-[#FF5A2A]">J</div>
-          ) : (
-            <div className="text-xl font-bold text-[#FF5A2A]">JáRespondi</div>
-          )}
+          <img 
+            src="/logo.png" 
+            alt="JáRespondi" 
+            className={sidebarCollapsed ? "h-8" : "h-10"}
+          />
         </div>
 
         {/* Menu */}

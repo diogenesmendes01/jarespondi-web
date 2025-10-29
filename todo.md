@@ -204,3 +204,5 @@
 - [x] Remover todos os emojis do Onboarding
 
 - [x] Bug Dashboard: Layout bagunçado em mobile - precisa responsividade completa
+
+- [x] Dashboard: Substituir texto da logo por imagem real
