@@ -15,6 +15,7 @@ import CRMNew from "./pages/CRMNew";
 import Campanhas from "./pages/Campanhas";
 import Analytics from "./pages/Analytics";
 import Configuracoes from "./pages/Configuracoes";
+import BaseConhecimento from "./pages/BaseConhecimento";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -30,7 +31,8 @@ function Router() {
       <Route path={"/crm"} component={CRMNew} />
       <Route path={"/campanhas"} component={Campanhas} />
       <Route path={"/analytics"} component={Analytics} />
-      <Route path={"/configuracoes"} component={Configuracoes} />
+      <Route path={"/dashboard/configuracoes"} component={Configuracoes} />
+      <Route path={"/dashboard/base-conhecimento"} component={BaseConhecimento} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -209,3 +209,13 @@
 
 - [x] Dashboard: Aumentar tamanho da logo (h-10/h-14)
 - [x] Bug Dashboard: Erro de <a> aninhado dentro de <a> no menu da sidebar
+
+## Nova Página: Base de Conhecimento
+- [x] Criar página Base de Conhecimento com sidebar de categorias
+- [x] Implementar listagem de conhecimentos com cards
+- [x] Criar modal de adição manual (texto direto)
+- [x] Criar modal de upload de arquivos (PDF, Word, Excel)
+- [x] Criar modal de importação de website
+- [x] Criar modal de FAQ estruturado (perguntas e respostas)
+- [x] Implementar filtros por categoria, fonte e status
+- [x] Adicionar busca de conhecimentos
