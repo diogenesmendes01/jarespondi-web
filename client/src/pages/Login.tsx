@@ -31,7 +31,7 @@ export default function Login() {
       <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-6 md:p-10 lg:p-12">
         {/* Logo */}
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="text-2xl md:text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
+          <img src="/logo.png" alt="JáRespondi" className="h-auto" style={{width: '140px'}} />
         </div>
 
         {/* Headline */}
@@ -151,17 +151,13 @@ export default function Login() {
 
         {/* Links */}
         <div className="mt-6 text-center space-y-4">
-          <Link href="/forgot-password">
-            <a className="text-sm text-[#FF5A2A] hover:underline">
-              Esqueceu a senha?
-            </a>
+          <Link href="/forgot-password" className="text-sm text-[#FF5A2A] hover:underline">
+            Esqueceu a senha?
           </Link>
           <p className="text-sm text-[#6B7280]">
             Não tem conta?{" "}
-            <Link href="/register">
-              <a className="text-[#FF5A2A] font-medium hover:underline">
-                Criar conta grátis
-              </a>
+            <Link href="/register" className="text-[#FF5A2A] font-medium hover:underline">
+              Criar conta grátis
             </Link>
           </p>
         </div>

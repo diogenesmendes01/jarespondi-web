@@ -4,7 +4,7 @@ import { trpc } from "@/lib/trpc";
 import { Loader2, Plus, Smartphone, Zap, Bot, Webhook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -43,10 +43,21 @@ export default function Configuracoes() {
   });
 
   const [aiConfigData, setAiConfigData] = useState({
-    name: aiConfig?.name || "Agente Principal",
-    systemPrompt: aiConfig?.systemPrompt || "",
-    temperature: aiConfig?.temperature || 70,
+    name: "Agente Principal",
+    systemPrompt: "",
+    temperature: 70,
   });
+
+  // Atualizar aiConfigData quando aiConfig carregar
+  useEffect(() => {
+    if (aiConfig) {
+      setAiConfigData({
+        name: aiConfig.name || "Agente Principal",
+        systemPrompt: aiConfig.systemPrompt || "",
+        temperature: aiConfig.temperature || 70,
+      });
+    }
+  }, [aiConfig]);
 
   const [newIntegration, setNewIntegration] = useState({
     type: "webhook" as "google_calendar" | "webhook" | "api",

@@ -1,223 +1,161 @@
 # Sistema WhatsApp IA - TODO
 
-## Design System
-- [ ] Implementar paleta de cores completa (Primary Blue, Secondary Orange, Success, Warning, Danger)
-- [ ] Configurar tipografia Inter com tamanhos corretos
-- [ ] Aplicar sistema de espaçamento 8px grid
-- [ ] Criar componentes base (botões, inputs, cards) com specs corretas
+## ✅ Concluído
 
-## Landing Page (/)
+### Design System & Branding
+- [x] Implementar paleta de cores quente (laranja #FF5A2A, marrom #2A1A16, bege #FFF9F6)
+- [x] Remover todos os azuis do projeto
+- [x] Tipografia bold e direta focada em resultados
+- [x] Logo real (logo.png) implementada em todas as páginas
+- [x] Logo aumentada para 140px em Login e Register
+- [x] Responsividade completa mobile-first
+
+### Landing Page
 - [x] Header com navegação e CTAs
-- [x] Hero Section com headline e visual
-- [x] Social Proof Section
-- [x] Problema Section (4 pain points)
-- [x] Solução Section (Como Funciona - 4 passos)
-- [x] Features Section (6 feature cards)
-- [x] Pricing Section (4 planos)
-- [x] FAQ Section (accordion)
-- [x] CTA Final
+- [x] Hero section com CTAs principais
+- [x] Seção de problemas que resolve (4 pain points)
+- [x] Como funciona (4 passos)
+- [x] Features principais com bordas animadas
+- [x] Pricing com 4 planos e toggle mensal/anual (cálculo automático de desconto)
+- [x] Carrossel responsivo de pricing cards em mobile
+- [x] Avaliações de clientes (6 depoimentos)
+- [x] Menu hamburguer mobile com sidebar lateral
+- [x] Tipografia responsiva em todas as seções
 - [x] Footer completo
 
-## Login (/login)
-- [x] Layout centralizado com card
-- [x] Campos de email e senha
-- [x] Checkbox "Lembrar de mim"
-- [x] Botão de login
-- [x] Opção "Continuar com Google"
-- [x] Links para recuperação e cadastro
+### Autenticação
+- [x] Página de Login com validações
+- [x] Página de Cadastro com validações
+- [x] Logo real nas páginas de Login e Register (140px)
+- [x] Integração com Google OAuth
+- [x] Responsividade mobile
 
-## Cadastro (/register)
-- [x] Campos: Nome, Email, Telefone, Senha
-- [x] Indicador de força da senha
-- [x] Checkbox de termos de uso
-- [x] Validações em tempo real
+### Onboarding
+- [x] Wizard de 6 steps (boas-vindas, escolha conexão, QR code, sucesso, config IA, finalização)
+- [x] Progress indicator visual (movido para área dedicada)
+- [x] Vídeo responsivo
+- [x] Logo real implementada
+- [x] Remover emojis para visual profissional
+- [x] Responsividade completa
 
-## Onboarding Wizard (/onboarding)
-- [x] Step 1: Boas-vindas com vídeo
-- [x] Step 2: Escolher tipo de conexão (Web vs API)
-- [x] Step 3: QR Code para conectar WhatsApp
-- [x] Step 4: Confirmação de sucesso
-- [x] Step 5: Configurar agente IA (nome, tipo, tom)
-- [x] Step 6: Finalização com teste
+### Dashboard
+- [x] Layout com sidebar de navegação
+- [x] Métricas principais (conversas, leads, taxa resposta, tempo médio)
+- [x] Ações rápidas
+- [x] Alertas recentes
+- [x] Menu hamburguer mobile
+- [x] Logo real na sidebar
+- [x] Responsividade completa
 
-## Dashboard (área logada)
-- [ ] Refazer layout seguindo design system
-- [ ] Métricas principais
-- [ ] Gráficos e visualizações
+### WhatsApp & Agentes
+- [x] Página de gerenciamento de números WhatsApp
+- [x] Modal de configuração de agente (6 passos completos)
+- [x] Sistema multi-agente com triggers e prioridades
+- [x] Responsividade
 
-## Módulos (área logada)
-- [ ] Conversas
-- [ ] CRM
-- [ ] Campanhas
-- [ ] Analytics
-- [ ] Configurações
+### CRM Avançado
+- [x] 4 abas (IA, Notas, Financeiro, Atividade)
+- [x] Insights da IA com ações sugeridas
+- [x] Sistema de ações rápidas (8 modais funcionais)
+- [x] Discussão interna tipo Slack (opcional com toggle)
+- [x] Timeline de atividades
+- [x] Reset de aba ao trocar contato
+- [x] Responsividade
 
-## Infraestrutura
-- [x] Schema do banco de dados
-- [x] Rotas tRPC
-- [ ] Autenticação completa
-- [ ] Integração WhatsApp Web
-- [ ] Integração WhatsApp API
-- [ ] Integração com IA
+### Base de Conhecimento
+- [x] Sidebar de filtros (categorias, fontes, status)
+- [x] 4 métodos de adição de conteúdo (Manual, Upload, Website, FAQ)
+- [x] Listagem em cards
+- [x] Modais funcionais para cada método
 
-## Bugs e Ajustes
-- [x] Criar rota /dashboard
-- [x] Criar página Dashboard completa com métricas
-- [x] Adicionar navegação lateral (sidebar)
+### Refatoração & Code Quality
+- [x] Criar componente Sidebar reutilizável
+- [x] Refatorar Dashboard para usar Sidebar component
+- [x] Refatorar WhatsAppAgents para usar Sidebar component
+- [x] Refatorar CRMNew para usar Sidebar component
+- [x] Refatorar BaseConhecimento para usar Sidebar component
+- [x] Corrigir todos os erros de nested anchor tags (<a> dentro de <Link>)
+  - [x] Dashboard
+  - [x] WhatsAppAgents
+  - [x] Login
+  - [x] Register
+- [x] Corrigir bug de aiConfig retornando undefined (Settings page)
 
+### Database Schema
+- [x] Tabela de usuários
+- [x] Tabela de contatos (CRM)
+- [x] Tabela de conversas
+- [x] Tabela de mensagens
+- [x] Tabela de campanhas
+- [x] Tabela de conexões WhatsApp
+- [x] Tabela de agentes IA
+- [x] Tabela de alertas
+- [x] Tabela de configurações IA
+- [x] Tabela de integrações
+- [x] Tabela de conhecimento (knowledge base)
 
-## Nova Arquitetura: Múltiplos Números e Agentes
+## 📋 Backlog (Próximas Features)
 
-### Página: Gerenciamento WhatsApp & Agentes (/dashboard/whatsapp)
-- [ ] Lista de números WhatsApp conectados
-- [ ] Expandir/colapsar cada número
-- [ ] Ver agentes ativos por número
-- [ ] Botão "Adicionar Número"
-- [ ] Botão "Adicionar Agente" por número
-- [ ] Status de conexão (conectado/desconectado)
-- [ ] Tipo de conexão (Web/API)
+### Páginas Faltantes
+- [ ] Página de Conversas (chat interface)
+- [ ] Página de Campanhas (criação e gerenciamento)
+- [ ] Página de Analytics (gráficos e métricas detalhadas)
 
-### Modal: Configurar Agente (6 passos)
-- [x] Step 1: Básico (nome, descrição, número)
-- [x] Step 2: Triggers (primeira mensagem, palavras-chave, horário, tag CRM, score, status pipeline)
-- [x] Step 3: Personalidade (system prompt, temperatura, max tokens, templates)
-- [x] Step 4: Ações Automáticas (atualizar CRM, agendar follow-ups, transferir agente, integrar calendário, criar tarefas, notificar humano)
-- [x] Step 5: Handoff (quando passar pra humano, mensagem ao transferir, notificar quem)
-- [x] Step 6: Revisão (resumo de tudo, testar agente, salvar ativo/inativo)
+### Integrações Backend
+- [ ] Conectar tRPC routes com dados reais do banco
+- [ ] Implementar integração WhatsApp Web
+- [ ] Implementar integração WhatsApp Official API
+- [ ] Integrar Claude API para agentes IA
+- [ ] Sistema de webhooks para mensagens
 
-### Sistema de Roteamento Inteligente
-- [ ] Analisar mensagem do cliente
-- [ ] Verificar triggers de cada agente
-- [ ] Sistema de prioridade (match exato > prioridade manual > contexto > fallback)
-- [ ] Ativar agente correto
+### Features Avançadas
+- [ ] Sistema de templates de mensagens
+- [ ] Automações e workflows
+- [ ] Relatórios exportáveis
+- [ ] Sistema de notificações em tempo real
+- [ ] Multi-tenancy completo
+- [ ] Sistema de permissões por usuário
 
-### CRM Expandido - Nova Sidebar
+### Melhorias UX
+- [ ] Loading states em todas as ações
+- [ ] Error boundaries e tratamento de erros
+- [ ] Toasts de confirmação em todas as ações
+- [ ] Skeleton loaders
+- [ ] Animações de transição
 
-#### Aba: 🤖 IA
-- [x] Resumo automático da IA (contexto, interesse, objeções, motivação)
-- [x] Próximas ações sugeridas (com botões de ação)
-- [x] Alertas (mencionou concorrente, sem resposta, probabilidade conversão)
-- [x] Intenção detectada (primária e secundária)
-- [x] Sentimento (barra de progresso, tendência)
+### Testes & QA
+- [ ] Testes unitários
+- [ ] Testes de integração
+- [ ] Testes E2E
+- [ ] Performance optimization
+- [ ] SEO optimization
 
-#### Aba: 📝 Notas
-- [x] Campo para adicionar nota (privada/pública)
-- [x] Botão "IA: Gerar Resumo"
-- [x] Notas fixadas (com opção de fixar/desfixar)
-- [x] Notas regulares (timeline de todas as notas)
-- [x] Notas automáticas da IA
-- [x] Notas da equipe
+## 🐛 Bugs Conhecidos
 
-#### Aba: 💵 Financeiro
-- [x] Total gasto, ticket médio, número de compras
-- [x] Histórico de transações
-- [x] Proposta atual (valor, status, validade)
-- [x] Botões: Ver nota fiscal, Ver proposta, Editar, Reenviar
+(Nenhum bug conhecido no momento - todos corrigidos!)
 
-#### Aba: 📊 Atividade
-- [x] Timeline completa (já existe, manter)
+## 📝 Notas Técnicas
 
-### Ações Rápidas no CRM
-- [x] 📧 Enviar Mensagem
-- [x] 📞 Ligar (em breve)
-- [x] 📅 Agendar Follow-up
-- [x] 📝 Criar Tarefa
-- [x] 🎯 Mudar Status
-- [x] 🏷️ Adicionar Tag
-- [x] 💰 Nova Proposta
-- [x] 🤖 Atribuir para IA (modal com instrução específica)
-- [x] 👤 Transferir p/ Humano
-- [ ] 📋 Duplicar Contato
-- [ ] 🗑️ Arquivar Contato
+### Estrutura do Projeto
+- **Frontend**: React + TypeScript + Wouter + Tailwind CSS
+- **Backend**: tRPC + Express + Drizzle ORM
+- **Database**: MySQL/TiDB
+- **Auth**: Manus OAuth
 
-### Modal: Instruir IA
-- [ ] Campo de texto para instrução específica
-- [ ] Quando executar (agora / quando cliente responder)
-- [ ] Qual agente deve executar (dropdown)
-- [ ] Checkbox: Notificar-me quando IA executar
+### Componentes Reutilizáveis
+- `Sidebar.tsx`: Navegação principal (usado em Dashboard, CRM, WhatsApp, BaseConhecimento)
+- Todos os componentes shadcn/ui em `client/src/components/ui/`
 
-### Discussão Interna (tipo Slack)
-- [x] Lista de comentários da equipe
-- [x] Comentários automáticos da IA
-- [x] Campo para adicionar comentário
-- [x] Sistema de menções (@usuario)
-- [x] Reações (👍, etc)
-- [x] Botão "Executar sugestão" em comentários da IA
-- [x] Anexar arquivos
+### Convenções
+- **Cores**: Usar variáveis CSS do tema (--primary, --foreground, etc)
+- **Responsividade**: Mobile-first com breakpoints md: e lg:
+- **Tipografia**: text-sm/base/lg/xl com variações md: e lg:
+- **Espaçamento**: p-4 md:p-6 lg:p-8 (padrão para padding responsivo)
+- **Links**: Nunca usar `<a>` dentro de `<Link>` - passar className direto no Link
 
-## Branding
-- [x] Atualizar todas as páginas para usar logo JáRespondi
-- [x] Mudar nome de JáResponde para JáRespondi em todos os lugares
-
-
-## Bugs
-- [x] CRM: Discussão interna aparecendo automaticamente - deve ser opcional (botão para abrir/fechar)
-
-- [x] CRM: Ajustar ações sugeridas pela IA - deixar claro que é a IA quem executa, mostrar agendamento/prazo
-
-- [x] CRM: Implementar funcionalidades nos botões de ações rápidas (enviar mensagem, agendar follow-up, criar tarefa, etc)
-
-- [x] CRM: Bug ao trocar de contato - conteúdo das abas não atualiza corretamente
-
-- [x] Atualizar design system completo com novas cores (laranja #FF5A2A, marrom #2A1A16, bege #FFF9F6)
-- [ ] Atualizar todas as páginas com novo design system
-- [x] Ajustar tipografia para ser mais direta e focada em resultados
-
-- [x] Remover TODOS os azuis do projeto e substituir por laranja #FF5A2A
-
-- [x] Corrigir duplicação de style no logo
-- [x] Remover emojis das features (deixar mais profissional)
-
-- [x] Implementar cálculo de preço anual (mensal x12 com 20% desconto) no toggle Mensal/Anual
-- [x] Adicionar borda laranja animada girando nos cards de features
-- [x] Aumentar mais o tamanho do logo (100x90px)
-- [ ] Tornar pricing cards responsivo com carrossel (2 cards + setas em mobile)
-- [x] Remover seção FAQ e substituir por avaliações de clientes
-
-- [x] Corrigir borda laranja animada nos cards de features (remover div interna, aplicar animação corretamente)
-- [x] Implementar carrossel responsivo para pricing cards (2 cards + setas em mobile)
-
-- [x] Bug: Setas de navegação do carrossel de preços não estão aparecendo em mobile
-
-- [x] Bug: Cards do carrossel mobile ficaram muito grandes, precisa ajustar tamanho
-
-- [x] Bug: Tipografia não responsiva em mobile - textos muito grandes, precisa reduzir fontes
-
-- [x] Implementar menu hamburguer mobile no header com sidebar de navegação
-
-- [x] Ajustar espaçamento entre botões no hero section (muito grudados)
-
-- [x] Melhorar responsividade da página de Login
-- [x] Melhorar responsividade da página de Cadastro
-- [x] Melhorar responsividade da página de Onboarding
-
-- [x] Bug Onboarding: Número da etapa aparecendo sobre o footer
-- [x] Bug Onboarding: Logo não está usando imagem real (JaRespondi-logo.png)
-- [x] Bug Onboarding: Vídeo muito grande em mobile
-- [x] Bug Onboarding: Textos não adaptados corretamente para mobile
-
-- [x] Mover indicador de progresso do header para entre header e conteúdo
-
-- [x] Bug Onboarding: Logo quebrada (não está carregando)
-- [x] Bug Onboarding: Remover texto "JáRespondi" duplicado
-
-- [x] Remover todos os emojis do Onboarding
-
-- [x] Bug Dashboard: Layout bagunçado em mobile - precisa responsividade completa
-
-- [x] Dashboard: Substituir texto da logo por imagem real
-
-- [x] Dashboard: Aumentar tamanho da logo (h-10/h-14)
-- [x] Bug Dashboard: Erro de <a> aninhado dentro de <a> no menu da sidebar
-
-## Nova Página: Base de Conhecimento
-- [x] Criar página Base de Conhecimento com sidebar de categorias
-- [x] Implementar listagem de conhecimentos com cards
-- [x] Criar modal de adição manual (texto direto)
-- [x] Criar modal de upload de arquivos (PDF, Word, Excel)
-- [x] Criar modal de importação de website
-- [x] Criar modal de FAQ estruturado (perguntas e respostas)
-- [x] Implementar filtros por categoria, fonte e status
-- [x] Adicionar busca de conhecimentos
-
-- [x] Bug WhatsAppAgents: Erro de <a> aninhado na sidebar (linha 129-130)
+### Bugs Corrigidos Recentemente
+1. ✅ Nested anchor tags em todas as páginas (Dashboard, WhatsApp, Login, Register)
+2. ✅ aiConfig.get retornando undefined (agora retorna objeto padrão)
+3. ✅ Sidebar duplicada em múltiplas páginas (agora usa componente único)
+4. ✅ Logo usando texto ao invés de imagem em Login/Register
+5. ✅ Tamanho da logo inconsistente (padronizado em 140px)

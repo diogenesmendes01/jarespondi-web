@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Search, Plus, Edit, Trash2, FileText, Upload, Globe, HelpCircle, X, Check } from "lucide-react";
+import { Search, Plus, Edit, Trash2, FileText, Upload, Globe, HelpCircle, X, Check, LayoutDashboard, MessageSquare, Users, Send, BarChart3, Settings } from "lucide-react";
+import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -80,9 +81,21 @@ export default function BaseConhecimento() {
     setFaqItems([...faqItems, { question: "", answer: "", keywords: "" }]);
   };
 
+  const menuItems = [
+    { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+    { icon: MessageSquare, label: "Conversas", path: "/conversas" },
+    { icon: Users, label: "CRM", path: "/crm" },
+    { icon: Send, label: "Campanhas", path: "/campanhas" },
+    { icon: BarChart3, label: "Analytics", path: "/analytics" },
+    { icon: Settings, label: "Configurações", path: "/configuracoes" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#FFF9F6] flex">
-      {/* Sidebar */}
+      {/* Sidebar de Navegação Principal */}
+      <Sidebar menuItems={menuItems} />
+      
+      {/* Sidebar de Filtros */}
       <aside className="w-64 bg-white border-r border-[#E5E7EB] p-6 space-y-6">
         {/* Categorias */}
         <div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -21,8 +22,6 @@ import {
 import { Link, useLocation } from "wouter";
 
 export default function Dashboard() {
-  const [location] = useLocation();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
@@ -109,62 +108,7 @@ export default function Dashboard() {
       )}
 
       {/* Sidebar */}
-      <aside
-        className={`${
-          sidebarCollapsed ? "w-20" : "w-64"
-        } bg-white border-r border-[#E5E7EB] transition-all duration-300 flex flex-col fixed md:relative h-full z-50 ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-        }`}
-      >
-        {/* Logo */}
-        <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
-          <img 
-            src="/logo.png" 
-            alt="JáRespondi" 
-            className={sidebarCollapsed ? "h-10" : "h-14"}
-          />
-        </div>
-
-        {/* Menu */}
-        <nav className="flex-1 p-4 space-y-2">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = location === item.path;
-
-            return (
-              <Link key={item.path} href={item.path}>
-                <div
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors cursor-pointer ${
-                    isActive
-                      ? "bg-[#FFF9F6] text-[#FF5A2A]"
-                      : "text-[#6B7280] hover:bg-[#F3F4F6]"
-                  }`}
-                >
-                  <Icon className="h-5 w-5 flex-shrink-0" />
-                  {!sidebarCollapsed && (
-                    <span className="text-sm font-medium">{item.label}</span>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* User */}
-        <div className="p-4 border-t border-[#E5E7EB]">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-semibold">
-              U
-            </div>
-            {!sidebarCollapsed && (
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-[#111827] truncate">Usuário</p>
-                <p className="text-xs text-[#6B7280] truncate">user@email.com</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </aside>
+      <Sidebar menuItems={menuItems} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col w-full md:w-auto">
@@ -181,14 +125,7 @@ export default function Dashboard() {
               ☰
             </Button>
             {/* Desktop Collapse Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="text-[#6B7280] hidden md:block"
-            >
-              ☰
-            </Button>
+
             <h1 className="text-lg md:text-xl font-semibold text-[#111827]">Dashboard</h1>
           </div>
 

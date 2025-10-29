@@ -258,7 +258,22 @@ export const appRouter = router({
 
   aiConfig: router({
     get: protectedProcedure.query(async ({ ctx }) => {
-      return await db.getActiveAIConfig(ctx.user.id);
+      const config = await db.getActiveAIConfig(ctx.user.id);
+      // Retorna configuração padrão se não existir
+      if (!config) {
+        return {
+          id: 0,
+          userId: ctx.user.id,
+          name: "Agente Padrão",
+          systemPrompt: "Você é um assistente prestativo.",
+          temperature: 70,
+          maxTokens: 1000,
+          isActive: false,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        };
+      }
+      return config;
     }),
 
     create: protectedProcedure

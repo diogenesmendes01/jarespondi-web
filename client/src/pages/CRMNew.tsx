@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -33,7 +34,7 @@ import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
 
 export default function CRMNew() {
-  const [location] = useLocation();
+
   const [selectedContact, setSelectedContact] = useState<any>(null);
   const [activeTab, setActiveTab] = useState<"info" | "chat" | "ia" | "activity" | "finance" | "notes">("ia");
   const [showQuickActions, setShowQuickActions] = useState(false);
@@ -241,45 +242,7 @@ Motivação: Casamento em março`,
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-[#E5E7EB] flex flex-col">
-        <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
-          <div className="text-xl font-bold text-[#FF5A2A]">JáRespondi</div>
-        </div>
-
-        <nav className="flex-1 p-4 space-y-2">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = location === item.path;
-
-            return (
-              <Link key={item.path} href={item.path}>
-                <a
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                    isActive
-                      ? "bg-[#FFF9F6] text-[#FF5A2A]"
-                      : "text-[#6B7280] hover:bg-[#F3F4F6]"
-                  }`}
-                >
-                  <Icon className="h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm font-medium">{item.label}</span>
-                </a>
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="p-4 border-t border-[#E5E7EB]">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-semibold">
-              U
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-[#111827] truncate">Usuário</p>
-              <p className="text-xs text-[#6B7280] truncate">user@email.com</p>
-            </div>
-          </div>
-        </div>
-      </aside>
+      <Sidebar menuItems={menuItems} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">

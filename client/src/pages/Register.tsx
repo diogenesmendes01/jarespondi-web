@@ -64,7 +64,7 @@ export default function Register() {
       <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-6 md:p-10 lg:p-12">
         {/* Logo */}
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="text-2xl md:text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
+          <img src="/logo.png" alt="JáRespondi" className="h-auto" style={{width: '140px'}} />
         </div>
 
         {/* Headline */}
@@ -262,8 +262,8 @@ export default function Register() {
         <div className="mt-6 text-center">
           <p className="text-sm text-[#6B7280]">
             Já tem uma conta?{" "}
-            <Link href="/login">
-              <a className="text-[#FF5A2A] font-medium hover:underline">Fazer login</a>
+            <Link href="/login" className="text-[#FF5A2A] font-medium hover:underline">
+              Fazer login
             </Link>
           </p>
         </div>
