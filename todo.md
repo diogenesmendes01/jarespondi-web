@@ -226,3 +226,10 @@
 - [x] Ajustar espaçamentos e posicionamento dos elementos (RESOLVIDO)
 - [x] Verificar responsividade e overflow (RESOLVIDO)
 - [x] Card do cliente expansível funcionando perfeitamente
+
+## 🎨 Melhorias de UI - Botões
+
+- [x] Criar componente ActionButton padronizado
+- [x] Ajustar espaçamento entre ícone e texto nos botões (gap-1.5)
+- [x] Aplicar ActionButton nos botões de ações rápidas
+- [x] Padrão: ActionButton com icon prop, gap-1.5, variant outline, size sm

@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
+import ActionButton from "@/components/ActionButton";
 
 type Message = {
   id: string;
@@ -545,34 +546,13 @@ export default function Conversas() {
             <div className="p-4 bg-white border-t border-[#E5E7EB] flex-shrink-0">
               <div className="text-sm font-semibold text-[#111827] mb-3">🔧 AÇÕES RÁPIDAS</div>
               <div className="flex flex-wrap gap-2">
-                <Button variant="outline" size="sm">
-                  <Pause className="h-4 w-4 mr-2" />
-                  Pausar IA
-                </Button>
-                <Button variant="outline" size="sm">
-                  <CheckCheck className="h-4 w-4 mr-2" />
-                  Resolver
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Agendar
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Tag className="h-4 w-4 mr-2" />
-                  Tag
-                </Button>
-                <Button variant="outline" size="sm">
-                  <UserPlus className="h-4 w-4 mr-2" />
-                  Atribuir
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Archive className="h-4 w-4 mr-2" />
-                  Arquivar
-                </Button>
-                <Button variant="outline" size="sm">
-                  <MoreVertical className="h-4 w-4 mr-2" />
-                  Mais
-                </Button>
+                <ActionButton icon={Pause}>Pausar IA</ActionButton>
+                <ActionButton icon={CheckCheck}>Resolver</ActionButton>
+                <ActionButton icon={Calendar}>Agendar</ActionButton>
+                <ActionButton icon={Tag}>Tag</ActionButton>
+                <ActionButton icon={UserPlus}>Atribuir</ActionButton>
+                <ActionButton icon={Archive}>Arquivar</ActionButton>
+                <ActionButton icon={MoreVertical}>Mais</ActionButton>
               </div>
             </div>
           </div>
