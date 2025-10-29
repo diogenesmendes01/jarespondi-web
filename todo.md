@@ -152,3 +152,5 @@
 
 ## Bugs
 - [x] CRM: Discussão interna aparecendo automaticamente - deve ser opcional (botão para abrir/fechar)
+
+- [x] CRM: Ajustar ações sugeridas pela IA - deixar claro que é a IA quem executa, mostrar agendamento/prazo

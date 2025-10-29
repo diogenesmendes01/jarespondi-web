@@ -92,20 +92,26 @@ Motivação: Casamento em março`,
         priority: "urgent",
         title: "URGENTE: Enviar proposta com desconto",
         reason: "Concorrência + urgência",
-        actions: ["Marcar como feita", "Enviar agora"],
+        actions: ["⚡ IA: Executar agora", "📅 Agendar para 2h"],
+        scheduled: false,
+        scheduledTime: "",
       },
       {
         id: 2,
         priority: "high",
         title: "Agendar consulta presencial",
         suggestion: "Próxima terça, 14h",
-        actions: ["Agendar", "Adiar"],
+        actions: ["✅ IA: Agendar", "✏️ Editar horário"],
+        scheduled: false,
+        scheduledTime: "",
       },
       {
         id: 3,
         priority: "medium",
         title: "Follow-up em 48h se não responder",
-        actions: ["Confirmar", "Editar prazo"],
+        actions: ["✅ IA: Programar", "✏️ Mudar prazo"],
+        scheduled: false,
+        scheduledTime: "",
       },
     ],
     alerts: [
@@ -493,13 +499,43 @@ Motivação: Casamento em março`,
                                 )}
                               </div>
                             </div>
-                            <div className="flex gap-2 mt-3">
-                              {action.actions.map((btn, index) => (
-                                <Button key={index} size="sm" variant="outline">
-                                  {btn}
+                            {!action.scheduled ? (
+                              <div className="flex gap-2 mt-3">
+                                {action.actions.map((btn, index) => (
+                                  <Button 
+                                    key={index} 
+                                    size="sm" 
+                                    variant="outline"
+                                    onClick={() => {
+                                      // Simular agendamento
+                                      action.scheduled = true;
+                                      action.scheduledTime = index === 0 ? "Agora" : "Em 2 horas";
+                                    }}
+                                  >
+                                    {btn}
+                                  </Button>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className="mt-3 p-3 bg-[#D1FAE5] rounded-lg flex items-center gap-2">
+                                <span className="text-lg">✅</span>
+                                <div className="flex-1">
+                                  <p className="text-sm font-semibold text-[#065F46]">
+                                    Agendado para IA executar!
+                                  </p>
+                                  <p className="text-xs text-[#059669]">
+                                    ⏰ {action.scheduledTime === "Agora" ? "Executando agora..." : `Programado para ${action.scheduledTime}`}
+                                  </p>
+                                </div>
+                                <Button 
+                                  size="sm" 
+                                  variant="ghost"
+                                  onClick={() => action.scheduled = false}
+                                >
+                                  ❌
                                 </Button>
-                              ))}
-                            </div>
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
