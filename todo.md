@@ -251,3 +251,13 @@
 - [ ] Padronizar cores: primary (laranja #FF5A2A), secondary (café #2A1A16)
 - [ ] Padronizar tipografia: Space Grotesk (títulos) + Inter (corpo)
 - [ ] Padronizar ícones: Lucide React com strokeWidth 2
+
+## 🎯 Padronização de Ícones
+
+- [x] Remover todos os emojis e substituir por ícones Lucide
+- [x] Página Conversas - substituir 🔴🟢🟡⚪ por ícones de status (AlertCircle, Bot, User, CheckCircle)
+- [ ] Página Dashboard - substituir emojis por ícones
+- [x] Página CRM - substituir emojis por ícones (CheckCircle, X, Circle)
+- [x] Página Configurações (abas) - substituir emojis por ícones (Smartphone, Phone, Bot, FileText)
+- [x] Componentes - AgentConfigModal com ícones Lucide (Bot, Target, TestTube, etc)
+- [x] Padronizar strokeWidth 2 em todos os ícones

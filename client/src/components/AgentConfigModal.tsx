@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, FileText, CheckCircle, Smartphone, Bot, Target, TestTube } from "lucide-react";
 
 interface AgentConfigModalProps {
   isOpen: boolean;
@@ -311,10 +311,10 @@ Sempre use emojis sutis 😊`,
         />
         <div className="flex gap-2 mt-2">
           <Button variant="outline" size="sm">
-            📋 Templates
+            <FileText size={16} strokeWidth={2} className="inline" /> Templates
           </Button>
           <Button variant="outline" size="sm">
-            🧪 Testar
+            <TestTube size={16} strokeWidth={2} className="inline" /> Testar
           </Button>
         </div>
       </div>
@@ -579,19 +579,19 @@ Sempre use emojis sutis 😊`,
         Passo 6 de 6: Revisão
       </h3>
       <p className="text-sm text-[#10B981] font-medium">
-        ✅ Configuração Completa! Revise:
+        <CheckCircle size={20} strokeWidth={2} className="inline text-success-500" /> Configuração Completa! Revise:
       </p>
 
       <Card className="p-4 bg-[#F9FAFB] space-y-2 text-sm">
         <p>
-          <span className="font-medium">🤖 Nome:</span> {formData.name || "Não definido"}
+          <span className="font-medium flex items-center gap-1.5"><Bot size={16} strokeWidth={2} /> Nome:</span> {formData.name || "Não definido"}
         </p>
         <p>
-          <span className="font-medium">📱 Número:</span>{" "}
+          <span className="font-medium flex items-center gap-1.5"><Smartphone size={16} strokeWidth={2} /> Número:</span>{" "}
           {formData.whatsappNumber || "Não selecionado"}
         </p>
         <p>
-          <span className="font-medium">🎯 Trigger:</span>{" "}
+          <span className="font-medium flex items-center gap-1.5"><Target size={16} strokeWidth={2} /> Trigger:</span>{" "}
           {formData.triggerFirstMessage && "Primeira mensagem"}
           {formData.triggerKeywords && " + palavras-chave"}
         </p>
@@ -611,7 +611,7 @@ Sempre use emojis sutis 😊`,
       </Card>
 
       <Button variant="outline" className="w-full">
-        🧪 Testar Agente
+        <TestTube size={16} strokeWidth={2} className="inline" /> Testar Agente
       </Button>
     </div>
   );

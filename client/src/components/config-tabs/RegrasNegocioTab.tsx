@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Plus, Edit, Trash2, ToggleLeft, ToggleRight } from "lucide-react";
+import { Plus, Edit, Trash2, ToggleLeft, ToggleRight, FileText } from "lucide-react";
 
 type BusinessRule = {
   id: number;
@@ -63,7 +63,7 @@ export default function RegrasNegocioTab() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-semibold text-[#111827]">📋 Regras de Negócio</h2>
+          <h2 className="text-lg font-semibold text-[#111827] flex items-center gap-2"><FileText size={20} strokeWidth={2} /> Regras de Negócio</h2>
           <p className="text-sm text-[#6B7280] mt-1">
             Configure regras automáticas para o comportamento dos agentes
           </p>

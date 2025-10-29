@@ -8,6 +8,9 @@ import {
   Power,
   Edit,
   Settings,
+  Smartphone,
+  Phone,
+  Bot,
 } from "lucide-react";
 import AgentConfigModal from "@/components/AgentConfigModal";
 
@@ -139,7 +142,7 @@ export default function WhatsAppTab() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-[#111827]">📱 WhatsApp & Agentes</h2>
+        <h2 className="text-lg font-semibold text-[#111827] flex items-center gap-2"><Smartphone size={20} strokeWidth={2} /> WhatsApp & Agentes</h2>
         <Button
           onClick={() => setShowAgentModal(true)}
           className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
@@ -171,8 +174,8 @@ export default function WhatsAppTab() {
                     </button>
                     <div>
                       <div className="flex items-center gap-3">
-                        <h3 className="text-lg font-semibold text-[#111827]">
-                          📞 {whatsapp.number} ({whatsapp.name})
+                        <h3 className="text-lg font-semibold text-[#111827] flex items-center gap-2">
+                          <Phone size={18} strokeWidth={2} /> {whatsapp.number} ({whatsapp.name})
                         </h3>
                         <span
                           className={`flex items-center gap-1 text-sm ${
@@ -210,8 +213,8 @@ export default function WhatsAppTab() {
               {isExpanded && (
                 <div className="px-6 pb-6 space-y-3">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-[#111827]">
-                      🤖 AGENTES ATIVOS ({whatsapp.agents.length}):
+                    <h4 className="text-sm font-semibold text-[#111827] flex items-center gap-2">
+                      <Bot size={16} strokeWidth={2} /> AGENTES ATIVOS ({whatsapp.agents.length}):
                     </h4>
                   </div>
 

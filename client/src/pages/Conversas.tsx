@@ -2,7 +2,7 @@ import { useState } from "react";
 import { 
   Search, ChevronDown, MoreVertical, Paperclip, Smile, Mic, Camera,
   Pause, CheckCheck, Calendar, Tag, UserPlus, Archive, Edit, Star,
-  Phone, Mail, Building, MapPin, Plus, Check
+  Phone, Mail, Building, MapPin, Plus, Check, AlertCircle, Bot, User, CheckCircle, Smartphone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -165,12 +165,13 @@ export default function Conversas() {
   };
 
   const getStatusIcon = (status: string) => {
+    const iconProps = { size: 16, strokeWidth: 2 };
     switch (status) {
-      case "urgent": return "🔴";
-      case "ai": return "🟢";
-      case "you": return "🟡";
-      case "resolved": return "⚪";
-      default: return "⚪";
+      case "urgent": return <AlertCircle {...iconProps} className="text-error-500" />;
+      case "ai": return <Bot {...iconProps} className="text-success-500" />;
+      case "you": return <User {...iconProps} className="text-warning-500" />;
+      case "resolved": return <CheckCircle {...iconProps} className="text-neutral-400" />;
+      default: return <CheckCircle {...iconProps} className="text-neutral-400" />;
     }
   };
 
@@ -182,7 +183,7 @@ export default function Conversas() {
           <img src="/logo.png" alt="JáRespondi" className="h-10" />
           <div className="flex items-center gap-2 text-sm text-[#6B7280]">
             <Phone className="h-4 w-4" />
-            <span>📱 Vendas: +55 11 9999-9999</span>
+            <span className="flex items-center gap-1.5"><Smartphone size={16} strokeWidth={2} /> Vendas: +55 11 9999-9999</span>
             <ChevronDown className="h-4 w-4" />
           </div>
         </div>
@@ -284,7 +285,7 @@ export default function Conversas() {
                       <div className="flex items-center gap-2">
                         <h3 className="font-semibold text-[#111827]">{selectedConversation.clientName}</h3>
                         <span className="text-xs text-green-600 flex items-center gap-1">
-                          🟢 Online
+                          <span className="flex items-center gap-1.5"><CheckCircle size={14} strokeWidth={2} className="text-success-500" /> Online</span>
                         </span>
                       </div>
                       <div className="text-sm text-[#6B7280] flex items-center gap-1">

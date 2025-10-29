@@ -24,6 +24,7 @@ import {
   ThumbsUp,
   Paperclip,
   Users,
+  Circle,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
@@ -539,7 +540,7 @@ Motivação: Casamento em março`,
                               </div>
                             ) : (
                               <div className="mt-3 p-3 bg-[#D1FAE5] rounded-lg flex items-center gap-2">
-                                <span className="text-lg">✅</span>
+                                <CheckCircle size={20} strokeWidth={2} className="text-success-500" />
                                 <div className="flex-1">
                                   <p className="text-sm font-semibold text-[#065F46]">
                                     Agendado para IA executar!
@@ -553,7 +554,7 @@ Motivação: Casamento em março`,
                                   variant="ghost"
                                   onClick={() => action.scheduled = false}
                                 >
-                                  ❌
+                                  <X size={20} strokeWidth={2} className="text-error-500" />
                                 </Button>
                               </div>
                             )}
@@ -581,10 +582,10 @@ Motivação: Casamento em março`,
                           >
                             <span className="text-lg">
                               {alert.type === "danger"
-                                ? "🔴"
+                                ? <Circle size={12} strokeWidth={2} className="fill-error-500 text-error-500" />
                                 : alert.type === "warning"
-                                ? "🟡"
-                                : "🟢"}
+                                ? <Circle size={12} strokeWidth={2} className="fill-warning-500 text-warning-500" />
+                                : <Circle size={12} strokeWidth={2} className="fill-success-500 text-success-500" />}
                             </span>
                             <p className="text-sm text-[#111827]">{alert.message}</p>
                           </div>
@@ -787,7 +788,7 @@ Motivação: Casamento em março`,
                                 {transaction.amount.toLocaleString()}
                               </span>
                               <span className="text-sm px-2 py-1 rounded bg-[#D1FAE5] text-[#065F46]">
-                                ✅ Pago
+                                <CheckCircle size={16} strokeWidth={2} className="text-success-500" /> Pago
                               </span>
                             </div>
                             <p className="text-sm text-[#6B7280] mb-2">
@@ -970,10 +971,10 @@ Motivação: Casamento em março`,
                     {discussion.actionable && (
                       <div className="flex gap-2 mb-2">
                         <Button size="sm" variant="outline">
-                          ✅ Executar sugestão
+                          <CheckCircle size={16} strokeWidth={2} /> Executar sugestão
                         </Button>
                         <Button size="sm" variant="outline">
-                          ❌ Ignorar
+                          <X size={16} strokeWidth={2} /> Ignorar
                         </Button>
                       </div>
                     )}
