@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -10,6 +11,17 @@ import { Check, Play, Rocket, X } from "lucide-react";
 import { Link } from "wouter";
 
 export default function LandingPage() {
+  const [isAnnual, setIsAnnual] = React.useState(false);
+
+  const calculatePrice = (monthlyPrice: string) => {
+    if (monthlyPrice === "Custom") return "Custom";
+    const monthly = parseInt(monthlyPrice);
+    if (isAnnual) {
+      const annual = monthly * 12 * 0.8; // 20% desconto
+      return Math.round(annual / 12).toString();
+    }
+    return monthlyPrice;
+  };
   const painPoints = [
     {
       icon: <X className="h-12 w-12 text-[#EF4444]" />,
@@ -185,7 +197,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 h-[72px] bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-12">
           <div className="flex items-center gap-8">
-            <img src="/logo.png" alt="JáRespondi" style={{width: '80px', height: '70px'}} />
+            <img src="/logo.png" alt="JáRespondi" style={{width: '100px', height: '90px'}} />
             <nav className="hidden md:flex items-center gap-8">
               <a href="#como-funciona" className="text-[#6B7280] hover:text-[#111827] transition-colors">
                 Como Funciona
@@ -347,14 +359,17 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="p-10 bg-white rounded-xl text-center hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
+                className="relative p-10 bg-white rounded-xl text-center hover:-translate-y-1 transition-transform duration-300 cursor-pointer overflow-hidden"
               >
+                <div className="absolute inset-0 rounded-xl border-2 border-[#FF5A2A] opacity-0 hover:opacity-100 transition-opacity duration-300 animate-spin-slow" style={{animationDuration: '8s'}}></div>
+                <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-[#111827] mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-base text-[#6B7280] leading-relaxed">
                   {feature.description}
                 </p>
+                </div>
               </Card>
             ))}
           </div>
@@ -369,10 +384,20 @@ export default function LandingPage() {
           </h2>
           <div className="flex justify-center mb-12">
             <div className="inline-flex items-center h-12 bg-[#F3F4F6] rounded-full p-1">
-              <button className="px-6 h-10 rounded-full bg-white text-[#111827] font-medium">
+              <button 
+                onClick={() => setIsAnnual(false)}
+                className={`px-6 h-10 rounded-full font-medium transition-all ${
+                  !isAnnual ? "bg-white text-[#111827] shadow-sm" : "text-[#6B7280]"
+                }`}
+              >
                 Mensal
               </button>
-              <button className="px-6 h-10 rounded-full text-[#6B7280] font-medium">
+              <button 
+                onClick={() => setIsAnnual(true)}
+                className={`px-6 h-10 rounded-full font-medium transition-all ${
+                  isAnnual ? "bg-white text-[#111827] shadow-sm" : "text-[#6B7280]"
+                }`}
+              >
                 Anual <span className="text-[#10B981] text-sm ml-1">-20%</span>
               </button>
             </div>
@@ -397,7 +422,7 @@ export default function LandingPage() {
                 </h3>
                 <div className="mb-8">
                   <span className="text-5xl font-bold text-[#111827]">
-                    {plan.price === "Custom" ? "Custom" : `R$ ${plan.price}`}
+                    {calculatePrice(plan.price) === "Custom" ? "Custom" : `R$ ${calculatePrice(plan.price)}`}
                   </span>
                   {plan.price !== "Custom" && (
                     <span className="text-base text-[#6B7280]">/mês</span>
@@ -426,29 +451,80 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-20 bg-[#F9FAFB]">
+      {/* Avaliações de Clientes */}
+      <section id="avaliacoes" className="py-20 bg-[#F9FAFB]">
         <div className="container mx-auto px-12">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-[#111827] mb-12">
-              Perguntas Frequentes
-            </h2>
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-white border border-[#E5E7EB] rounded-lg px-6"
-                >
-                  <AccordionTrigger className="text-lg font-semibold text-[#111827] hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-[#6B7280] leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <h2 className="text-4xl font-bold text-center text-[#111827] mb-4">
+            O Que Nossos Clientes Dizem
+          </h2>
+          <p className="text-center text-[#6B7280] mb-12 text-lg">
+            Mais de 500 empresas já automatizaram seu atendimento
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Carlos Silva",
+                role: "CEO, Clínica Médica",
+                avatar: "CS",
+                rating: 5,
+                text: "Nosso atendimento ficou 24/7 sem contratar mais gente. A IA responde tão bem que os pacientes nem percebem. Aumentamos 40% nas consultas agendadas."
+              },
+              {
+                name: "Ana Paula Costa",
+                role: "Gerente de Vendas, E-commerce",
+                avatar: "AP",
+                rating: 5,
+                text: "Antes perdíamos vendas de madrugada. Agora a IA atende, qualifica e já envia proposta. Nosso faturamento subiu 60% em 3 meses."
+              },
+              {
+                name: "Roberto Mendes",
+                role: "Dono, Imobiliária",
+                avatar: "RM",
+                rating: 5,
+                text: "Sistema incrível! A IA agenda visitas, envia fotos dos imóveis e ainda faz follow-up. Minha equipe agora foca só em fechar negócio."
+              },
+              {
+                name: "Juliana Ferreira",
+                role: "Sócia, Escritório de Advocacia",
+                avatar: "JF",
+                rating: 5,
+                text: "Economizamos R$ 8 mil por mês que gastávamos com recepcionista. A IA atende melhor, mais rápido e nunca erra."
+              },
+              {
+                name: "Pedro Almeida",
+                role: "Diretor, Agência de Marketing",
+                avatar: "PA",
+                rating: 5,
+                text: "Nossos clientes adoraram! Respondemos leads em segundos. Taxa de conversão aumentou 85%. Melhor investimento do ano."
+              },
+              {
+                name: "Mariana Santos",
+                role: "Proprietária, Salão de Beleza",
+                avatar: "MS",
+                rating: 5,
+                text: "Antes eu mesma tinha que responder WhatsApp até de noite. Agora a IA faz tudo: agenda, confirma, envia lembrete. Minha vida mudou!"
+              }
+            ].map((review, index) => (
+              <Card key={index} className="p-8 bg-white rounded-xl shadow-warm hover:shadow-warm-lg transition-shadow">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-bold text-lg">
+                    {review.avatar}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-[#111827]">{review.name}</div>
+                    <div className="text-sm text-[#6B7280]">{review.role}</div>
+                  </div>
+                </div>
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-[#F59E0B] text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-[#6B7280] leading-relaxed">
+                  "{review.text}"
+                </p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

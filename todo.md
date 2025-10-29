@@ -167,3 +167,9 @@
 
 - [x] Corrigir duplicação de style no logo
 - [x] Remover emojis das features (deixar mais profissional)
+
+- [x] Implementar cálculo de preço anual (mensal x12 com 20% desconto) no toggle Mensal/Anual
+- [x] Adicionar borda laranja animada girando nos cards de features
+- [x] Aumentar mais o tamanho do logo (100x90px)
+- [ ] Tornar pricing cards responsivo com carrossel (2 cards + setas em mobile)
+- [x] Remover seção FAQ e substituir por avaliações de clientes
