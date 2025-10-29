@@ -13,6 +13,7 @@ import { Link } from "wouter";
 export default function LandingPage() {
   const [isAnnual, setIsAnnual] = React.useState(false);
   const [currentPlanIndex, setCurrentPlanIndex] = React.useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const calculatePrice = (monthlyPrice: string) => {
     if (monthlyPrice === "Custom") return "Custom";
@@ -204,9 +205,9 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="sticky top-0 z-50 h-[72px] bg-white border-b border-[#E5E7EB]">
-        <div className="container mx-auto h-full flex items-center justify-between px-12">
+        <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           <div className="flex items-center gap-8">
-            <img src="/logo.png" alt="JáRespondi" style={{width: '100px', height: '90px'}} />
+            <img src="/logo.png" alt="JáRespondi" className="h-12 md:h-16 lg:h-[90px] w-auto" />
             <nav className="hidden md:flex items-center gap-8">
               <a href="#como-funciona" className="text-[#6B7280] hover:text-[#111827] transition-colors">
                 Como Funciona
@@ -222,7 +223,7 @@ export default function LandingPage() {
               </a>
             </nav>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <Link href="/login">
               <Button
                 variant="outline"
@@ -237,8 +238,85 @@ export default function LandingPage() {
               </Button>
             </Link>
           </div>
+          {/* Menu Hamburguer Mobile */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-[#111827]"
+            aria-label="Menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </header>
+
+      {/* Sidebar Mobile */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Overlay */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          {/* Sidebar */}
+          <div className="fixed top-[72px] right-0 bottom-0 w-[280px] bg-white z-50 md:hidden shadow-2xl overflow-y-auto">
+            <nav className="flex flex-col p-6">
+              <a 
+                href="#como-funciona" 
+                className="py-4 text-[#111827] font-medium border-b border-[#E5E7EB]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Como Funciona
+              </a>
+              <a 
+                href="#recursos" 
+                className="py-4 text-[#111827] font-medium border-b border-[#E5E7EB]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Recursos
+              </a>
+              <a 
+                href="#precos" 
+                className="py-4 text-[#111827] font-medium border-b border-[#E5E7EB]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Preços
+              </a>
+              <a 
+                href="#faq" 
+                className="py-4 text-[#111827] font-medium border-b border-[#E5E7EB]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQ
+              </a>
+              <div className="mt-6 space-y-3">
+                <Link href="/login">
+                  <Button
+                    variant="outline"
+                    className="w-full h-11 border-[#E5E7EB] text-[#111827] hover:bg-[#F9FAFB]"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Entrar
+                  </Button>
+                </Link>
+                <Link href="/register">
+                  <Button 
+                    className="w-full h-11 bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Começar Grátis
+                  </Button>
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </>
+      )}
 
       {/* Hero Section */}
       <section className="gradient-hero py-12 md:py-16 lg:py-20">

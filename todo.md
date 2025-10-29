@@ -182,3 +182,5 @@
 - [x] Bug: Cards do carrossel mobile ficaram muito grandes, precisa ajustar tamanho
 
 - [x] Bug: Tipografia não responsiva em mobile - textos muito grandes, precisa reduzir fontes
+
+- [x] Implementar menu hamburguer mobile no header com sidebar de navegação
