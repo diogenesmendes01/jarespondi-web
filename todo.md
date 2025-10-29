@@ -219,3 +219,10 @@
 - [x] Sistema de status visual (🔴 urgente, 🟢 IA, 🟡 você, ⚪ resolvida)
 - [x] Filtros e busca na lista de conversas
 - [x] Detalhes completos do cliente no card expandido (CRM, tags, notas, tarefas, histórico)
+
+## 🐛 Bugs - Tela de Conversas
+
+- [x] Layout quebrado - itens não estão alinhados corretamente (RESOLVIDO)
+- [x] Ajustar espaçamentos e posicionamento dos elementos (RESOLVIDO)
+- [x] Verificar responsividade e overflow (RESOLVIDO)
+- [x] Card do cliente expansível funcionando perfeitamente

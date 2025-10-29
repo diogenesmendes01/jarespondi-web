@@ -268,9 +268,9 @@ export default function Conversas() {
 
         {/* CHAT ATIVO */}
         {selectedConversation && (
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col overflow-hidden">
             {/* CARD DO CLIENTE */}
-            <Card className={`m-4 ${cardExpanded ? "h-[400px] overflow-y-auto" : "h-[120px]"} transition-all`}>
+            <Card className={`m-4 ${cardExpanded ? "max-h-[400px] overflow-y-auto" : ""} transition-all flex-shrink-0`}>
               <div className="p-4">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
@@ -443,7 +443,7 @@ export default function Conversas() {
             </Card>
 
             {/* ÁREA DE MENSAGENS */}
-            <div className="flex-1 overflow-y-auto px-4 space-y-4">
+            <div className="flex-1 overflow-y-auto px-4 space-y-4 min-h-0">
               {/* Divisor de data */}
               <div className="flex items-center justify-center">
                 <div className="border-t border-[#E5E7EB] flex-1" />
@@ -498,7 +498,7 @@ export default function Conversas() {
             </div>
 
             {/* INPUT DE MENSAGEM */}
-            <div className="p-4 bg-white border-t border-[#E5E7EB]">
+            <div className="p-4 bg-white border-t border-[#E5E7EB] flex-shrink-0">
               <div className="mb-2">
                 <Textarea
                   placeholder="Digite sua mensagem..."
@@ -542,7 +542,7 @@ export default function Conversas() {
             </div>
 
             {/* AÇÕES RÁPIDAS */}
-            <div className="p-4 bg-white border-t border-[#E5E7EB]">
+            <div className="p-4 bg-white border-t border-[#E5E7EB] flex-shrink-0">
               <div className="text-sm font-semibold text-[#111827] mb-3">🔧 AÇÕES RÁPIDAS</div>
               <div className="flex flex-wrap gap-2">
                 <Button variant="outline" size="sm">
