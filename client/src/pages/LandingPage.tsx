@@ -456,43 +456,46 @@ export default function LandingPage() {
           </div>
 
           {/* Mobile: Carrossel */}
-          <div className="md:hidden relative px-4">
-            <div className="flex gap-4 overflow-hidden">
+          <div className="md:hidden relative px-2 max-w-md mx-auto">
+            <div className="flex gap-3 overflow-hidden">
               {plans.slice(currentPlanIndex, currentPlanIndex + 2).map((plan, index) => (
                 <Card
                   key={index}
-                  className={`relative p-6 rounded-2xl flex-shrink-0 w-[calc(50%-8px)] ${
+                  className={`relative p-4 rounded-xl flex-shrink-0 w-[calc(50%-6px)] ${
                     plan.popular
                       ? "border-2 border-[#FF5A2A] shadow-lg"
                       : "border-2 border-[#E5E7EB]"
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-white px-3 py-1 rounded-full text-xs font-bold">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-white px-2 py-0.5 rounded-full text-[10px] font-bold">
                       ⭐ POPULAR
                     </div>
                   )}
-                  <h3 className="text-lg font-semibold text-[#111827] mb-3">
+                  <h3 className="text-base font-semibold text-[#111827] mb-2">
                     {plan.name}
                   </h3>
-                  <div className="mb-6">
-                    <span className="text-3xl font-bold text-[#111827]">
+                  <div className="mb-3">
+                    <span className="text-2xl font-bold text-[#111827]">
                       {calculatePrice(plan.price) === "Custom" ? "Custom" : `R$ ${calculatePrice(plan.price)}`}
                     </span>
                     {plan.price !== "Custom" && (
-                      <span className="text-sm text-[#6B7280]">/mês</span>
+                      <span className="text-xs text-[#6B7280]">/mês</span>
                     )}
                   </div>
-                  <ul className="space-y-2 mb-6">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs text-[#6B7280]">
+                  <ul className="space-y-1.5 mb-4">
+                    {plan.features.slice(0, 4).map((feature, i) => (
+                      <li key={i} className="flex items-start gap-1.5 text-[10px] text-[#6B7280]">
                         <Check className="h-3 w-3 text-[#10B981] flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}
+                    {plan.features.length > 4 && (
+                      <li className="text-[10px] text-[#6B7280] pl-4">+{plan.features.length - 4} mais...</li>
+                    )}
                   </ul>
                   <Button
-                    className={`w-full h-10 text-sm ${
+                    className={`w-full h-8 text-xs ${
                       plan.popular
                         ? "bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
                         : "bg-transparent border border-[#E5E7EB] text-[#111827] hover:bg-[#F9FAFB]"
@@ -508,9 +511,9 @@ export default function LandingPage() {
             {currentPlanIndex > 0 && (
               <button
                 onClick={prevPlans}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10"
+                className="absolute -left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-1.5 shadow-md z-10"
               >
-                <svg className="w-6 h-6 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -518,9 +521,9 @@ export default function LandingPage() {
             {currentPlanIndex < plans.length - 2 && (
               <button
                 onClick={nextPlans}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10"
+                className="absolute -right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-1.5 shadow-md z-10"
               >
-                <svg className="w-6 h-6 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>

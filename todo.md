@@ -178,3 +178,5 @@
 - [x] Implementar carrossel responsivo para pricing cards (2 cards + setas em mobile)
 
 - [x] Bug: Setas de navegação do carrossel de preços não estão aparecendo em mobile
+
+- [x] Bug: Cards do carrossel mobile ficaram muito grandes, precisa ajustar tamanho
