@@ -28,14 +28,14 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex items-center justify-center p-4">
-      <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-12">
+      <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-6 md:p-10 lg:p-12">
         {/* Logo */}
-        <div className="flex justify-center mb-8">
-          <div className="text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
+        <div className="flex justify-center mb-6 md:mb-8">
+          <div className="text-2xl md:text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
         </div>
 
         {/* Headline */}
-        <h1 className="text-[28px] font-bold text-[#111827] text-center mb-8">
+        <h1 className="text-xl md:text-2xl lg:text-[28px] font-bold text-[#111827] text-center mb-6 md:mb-8">
           Bem-vindo de volta! 👋
         </h1>
 

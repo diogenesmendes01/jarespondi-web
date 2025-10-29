@@ -186,3 +186,7 @@
 - [x] Implementar menu hamburguer mobile no header com sidebar de navegação
 
 - [x] Ajustar espaçamento entre botões no hero section (muito grudados)
+
+- [x] Melhorar responsividade da página de Login
+- [x] Melhorar responsividade da página de Cadastro
+- [x] Melhorar responsividade da página de Onboarding

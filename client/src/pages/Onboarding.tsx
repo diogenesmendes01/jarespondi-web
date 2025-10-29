@@ -89,10 +89,10 @@ export default function Onboarding() {
   return (
     <div className="min-h-screen bg-[#F9FAFB]">
       {/* Top Bar */}
-      <div className="h-20 bg-white border-b border-[#E5E7EB]">
-        <div className="container mx-auto h-full flex items-center justify-between px-12">
+      <div className="h-16 md:h-20 bg-white border-b border-[#E5E7EB]">
+        <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
-          <div className="text-2xl font-bold text-[#FF5A2A]">JáRespondi</div>
+          <div className="text-xl md:text-2xl font-bold text-[#FF5A2A]">JáRespondi</div>
 
           {/* Progress Indicator */}
           <div className="flex flex-col items-center">
@@ -105,7 +105,7 @@ export default function Onboarding() {
                 return (
                   <div key={stepNum} className="flex items-center">
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
+                      className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-semibold transition-colors ${
                         isCompleted
                           ? "bg-[#10B981] text-white"
                           : isActive
@@ -117,7 +117,7 @@ export default function Onboarding() {
                     </div>
                     {stepNum < totalSteps && (
                       <div
-                        className={`w-10 h-0.5 ${
+                        className={`w-6 md:w-10 h-0.5 ${
                           isCompleted ? "bg-[#FF5A2A]" : "bg-[#E5E7EB]"
                         }`}
                       />
@@ -143,7 +143,7 @@ export default function Onboarding() {
       </div>
 
       {/* Content Area */}
-      <div className="container mx-auto px-12 py-12">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
         <div className="max-w-4xl mx-auto">
           {/* Step 1: Welcome */}
           {currentStep === 1 && (
@@ -195,7 +195,7 @@ export default function Onboarding() {
           {currentStep === 2 && (
             <div className="space-y-8">
               <div className="text-center">
-                <h2 className="text-[32px] font-bold text-[#111827] mb-4">
+                <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827] mb-4">
                   Conecte seu Primeiro WhatsApp 📱
                 </h2>
                 <p className="text-base text-[#6B7280]">
@@ -293,7 +293,7 @@ export default function Onboarding() {
           {currentStep === 3 && (
             <div className="space-y-8">
               <div className="text-center">
-                <h2 className="text-[32px] font-bold text-[#111827] mb-8">
+                <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827] mb-6 md:mb-8">
                   Escaneie o QR Code 📷
                 </h2>
               </div>
@@ -364,7 +364,7 @@ export default function Onboarding() {
           {currentStep === 4 && (
             <div className="text-center space-y-8">
               <div className="text-[120px]">✅</div>
-              <h2 className="text-[32px] font-bold text-[#111827]">
+              <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827]">
                 WhatsApp Conectado com Sucesso!
               </h2>
               <p className="text-lg font-medium text-[#6B7280]">
@@ -389,7 +389,7 @@ export default function Onboarding() {
           {currentStep === 5 && (
             <div className="space-y-8">
               <div className="text-center">
-                <h2 className="text-[32px] font-bold text-[#111827] mb-4">
+                <h2 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-[#111827] mb-4">
                   Configure Seu Primeiro Agente 🤖
                 </h2>
               </div>
@@ -539,7 +539,7 @@ export default function Onboarding() {
               <div className="pt-8">
                 <Button
                   onClick={() => setLocation("/dashboard")}
-                  className="h-14 px-12 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-lg font-semibold rounded-xl"
+                  className="h-12 md:h-14 px-8 md:px-12 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base md:text-lg font-semibold rounded-xl"
                 >
                   🚀 Ir para o Dashboard
                 </Button>
