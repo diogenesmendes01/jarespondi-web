@@ -180,3 +180,5 @@
 - [x] Bug: Setas de navegação do carrossel de preços não estão aparecendo em mobile
 
 - [x] Bug: Cards do carrossel mobile ficaram muito grandes, precisa ajustar tamanho
+
+- [x] Bug: Tipografia não responsiva em mobile - textos muito grandes, precisa reduzir fontes

@@ -241,26 +241,26 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="gradient-hero py-20">
-        <div className="container mx-auto px-12">
+      <section className="gradient-hero py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-[56px] font-bold leading-[1.2] mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-[56px] font-bold leading-tight md:leading-[1.2] mb-4">
                 Atendemos e vendemos pra você em 10 segundos
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8">
                 Seu cliente pergunta no WhatsApp. A resposta sai na hora. E já vem com proposta.
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <Link href="/register">
-                  <Button className="h-12 px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-lg font-semibold">
+                  <Button className="h-10 md:h-12 px-6 md:px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base md:text-lg font-semibold">
                     <Rocket className="mr-2 h-5 w-5" />
                     Responder Agora
                   </Button>
                 </Link>
                 <Button
                   variant="outline"
-                  className="h-12 px-8 border-[#E5E7EB] text-[#111827] text-lg font-semibold"
+                  className="h-10 md:h-12 px-6 md:px-8 border-[#E5E7EB] text-[#111827] text-base md:text-lg font-semibold"
                 >
                   <Play className="mr-2 h-5 w-5" />
                   Ver Demo
@@ -313,9 +313,9 @@ export default function LandingPage() {
       </section>
 
       {/* Problema Section */}
-      <section id="problema" className="py-20 bg-[#F9FAFB]">
-        <div className="container mx-auto px-12">
-          <h2 className="text-4xl font-bold text-center text-[#111827] mb-12">
+      <section id="problema" className="py-12 md:py-16 lg:py-20 bg-[#F9FAFB]">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#111827] mb-8 md:mb-12">
             Você está perdendo clientes porque:
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -335,9 +335,9 @@ export default function LandingPage() {
       </section>
 
       {/* Como Funciona */}
-      <section id="como-funciona" className="py-20 bg-white">
-        <div className="container mx-auto px-12">
-          <h2 className="text-4xl font-bold text-center text-[#111827] mb-16">
+      <section id="como-funciona" className="py-12 md:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#111827] mb-10 md:mb-16">
             Como Funciona (4 Passos Simples)
           </h2>
           <div className="max-w-3xl mx-auto space-y-16">
@@ -359,9 +359,9 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section id="recursos" className="py-20 bg-[#F9FAFB]">
-        <div className="container mx-auto px-12">
-          <h2 className="text-4xl font-bold text-center text-[#111827] mb-16">
+      <section id="recursos" className="py-12 md:py-16 lg:py-20 bg-[#F9FAFB]">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#111827] mb-10 md:mb-16">
             Tudo que Você Precisa em Um Só Lugar
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -383,9 +383,9 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing */}
-      <section id="precos" className="py-20 bg-white">
-        <div className="container mx-auto px-12">
-          <h2 className="text-4xl font-bold text-center text-[#111827] mb-6">
+      <section id="precos" className="py-12 md:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#111827] mb-4 md:mb-6">
             Planos que Crescem com Você
           </h2>
           <div className="flex justify-center mb-12">
@@ -427,7 +427,7 @@ export default function LandingPage() {
                   {plan.name}
                 </h3>
                 <div className="mb-8">
-                  <span className="text-5xl font-bold text-[#111827]">
+                  <span className="text-4xl md:text-5xl font-bold text-[#111827]">
                     {calculatePrice(plan.price) === "Custom" ? "Custom" : `R$ ${calculatePrice(plan.price)}`}
                   </span>
                   {plan.price !== "Custom" && (
@@ -533,9 +533,9 @@ export default function LandingPage() {
       </section>
 
       {/* Avaliações de Clientes */}
-      <section id="avaliacoes" className="py-20 bg-[#F9FAFB]">
-        <div className="container mx-auto px-12">
-          <h2 className="text-4xl font-bold text-center text-[#111827] mb-4">
+      <section id="avaliacoes" className="py-12 md:py-16 lg:py-20 bg-[#F9FAFB]">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#111827] mb-3 md:mb-4">
             O Que Nossos Clientes Dizem
           </h2>
           <p className="text-center text-[#6B7280] mb-12 text-lg">
@@ -611,9 +611,9 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 gradient-primary text-white">
+      <section className="py-12 md:py-16 lg:py-20 gradient-primary text-white">
         <div className="container mx-auto px-12 text-center">
-          <h2 className="text-5xl font-bold mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
             Pronto para Automatizar Seu Atendimento?
           </h2>
           <Link href="/register">
@@ -629,7 +629,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="py-16 bg-[#111827] text-white">
-        <div className="container mx-auto px-12">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="grid md:grid-cols-5 gap-8 mb-12">
             <div>
               <div className="text-2xl font-bold mb-4">JáRespondi</div>
