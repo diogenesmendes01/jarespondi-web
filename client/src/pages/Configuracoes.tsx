@@ -2,6 +2,9 @@ import Sidebar from "@/components/Sidebar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { dashboardMenuItems } from "@/lib/menuItems";
 import { MessageCircle, BookOpen, FileText } from "lucide-react";
+import WhatsAppTab from "@/components/config-tabs/WhatsAppTab";
+import BaseConhecimentoTab from "@/components/config-tabs/BaseConhecimentoTab";
+import RegrasNegocioTab from "@/components/config-tabs/RegrasNegocioTab";
 
 export default function Configuracoes() {
   return (
@@ -34,26 +37,17 @@ export default function Configuracoes() {
 
             {/* Aba WhatsApp */}
             <TabsContent value="whatsapp" className="space-y-4">
-              <div className="bg-white rounded-lg border border-[#E5E7EB] p-6">
-                <h2 className="text-lg font-semibold text-[#111827] mb-4">Configurações do WhatsApp</h2>
-                <p className="text-[#6B7280]">Conteúdo da página WhatsAppAgents será movido para cá...</p>
-              </div>
+              <WhatsAppTab />
             </TabsContent>
 
             {/* Aba Base de Conhecimento */}
             <TabsContent value="knowledge" className="space-y-4">
-              <div className="bg-white rounded-lg border border-[#E5E7EB] p-6">
-                <h2 className="text-lg font-semibold text-[#111827] mb-4">Base de Conhecimento</h2>
-                <p className="text-[#6B7280]">Conteúdo da página BaseConhecimento será movido para cá...</p>
-              </div>
+              <BaseConhecimentoTab />
             </TabsContent>
 
             {/* Aba Regras de Negócio */}
             <TabsContent value="rules" className="space-y-4">
-              <div className="bg-white rounded-lg border border-[#E5E7EB] p-6">
-                <h2 className="text-lg font-semibold text-[#111827] mb-4">Regras de Negócio</h2>
-                <p className="text-[#6B7280]">Nova seção para regras de negócio...</p>
-              </div>
+              <RegrasNegocioTab />
             </TabsContent>
           </Tabs>
         </div>

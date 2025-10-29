@@ -199,6 +199,6 @@
 - [x] Aba Base de Conhecimento - estrutura criada (conteúdo será migrado)
 - [x] Aba Regras de Negócio - estrutura criada (nova seção)
 - [x] Atualizar menuItems.ts removendo itens da sidebar
-- [ ] Migrar conteúdo da página WhatsAppAgents para aba WhatsApp
-- [ ] Migrar conteúdo da página BaseConhecimento para aba Base de Conhecimento
-- [ ] Implementar funcionalidades na aba Regras de Negócio
+- [x] Migrar conteúdo da página WhatsAppAgents para aba WhatsApp
+- [x] Migrar conteúdo da página BaseConhecimento para aba Base de Conhecimento
+- [x] Implementar funcionalidades na aba Regras de Negócio
