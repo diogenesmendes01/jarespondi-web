@@ -219,3 +219,5 @@
 - [x] Criar modal de FAQ estruturado (perguntas e respostas)
 - [x] Implementar filtros por categoria, fonte e status
 - [x] Adicionar busca de conhecimentos
+
+- [x] Bug WhatsAppAgents: Erro de <a> aninhado na sidebar (linha 129-130)

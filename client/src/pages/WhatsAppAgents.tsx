@@ -127,8 +127,8 @@ export default function WhatsAppAgents() {
 
             return (
               <Link key={item.path} href={item.path}>
-                <a
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                <div
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors cursor-pointer ${
                     isActive
                       ? "bg-[#FFF9F6] text-[#FF5A2A]"
                       : "text-[#6B7280] hover:bg-[#F3F4F6]"
@@ -136,7 +136,7 @@ export default function WhatsAppAgents() {
                 >
                   <Icon className="h-5 w-5 flex-shrink-0" />
                   <span className="text-sm font-medium">{item.label}</span>
-                </a>
+                </div>
               </Link>
             );
           })}
