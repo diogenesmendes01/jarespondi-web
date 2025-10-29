@@ -37,6 +37,7 @@ export default function CRMNew() {
   const [activeTab, setActiveTab] = useState<"info" | "chat" | "ia" | "activity" | "finance" | "notes">("ia");
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
+  const [activeActionModal, setActiveActionModal] = useState<string | null>(null);
 
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
@@ -891,6 +892,12 @@ Motivação: Casamento em março`,
                   <button
                     key={index}
                     disabled={action.disabled}
+                    onClick={() => {
+                      if (!action.disabled) {
+                        setActiveActionModal(action.label);
+                        setShowQuickActions(false);
+                      }
+                    }}
                     className={`p-4 border-2 border-[#E5E7EB] rounded-xl hover:border-[#2563EB] hover:bg-[#EFF6FF] transition-all ${
                       action.disabled ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -1012,6 +1019,213 @@ Motivação: Casamento em março`,
               <Button size="sm" className="bg-[#2563EB]">
                 Enviar
               </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Action Modals */}
+      {/* Enviar Mensagem Modal */}
+      {activeActionModal === "Enviar Mensagem" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">📧 Enviar Mensagem</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <textarea placeholder="Digite sua mensagem..." rows={6} className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg mb-4" />
+            <div className="flex gap-2 justify-end">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Mensagem enviada!"); setActiveActionModal(null); }}>Enviar</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Agendar Follow-up Modal */}
+      {activeActionModal === "Agendar Follow-up" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">📅 Agendar Follow-up</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Data e Hora</label>
+                <input type="datetime-local" className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Descrição</label>
+                <textarea placeholder="Motivo do follow-up..." rows={3} className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Follow-up agendado!"); setActiveActionModal(null); }}>Agendar</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Criar Tarefa Modal */}
+      {activeActionModal === "Criar Tarefa" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">📝 Criar Tarefa</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Título</label>
+                <input type="text" placeholder="Ex: Enviar contrato" className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Descrição</label>
+                <textarea placeholder="Detalhes da tarefa..." rows={3} className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Prazo</label>
+                <input type="date" className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Tarefa criada!"); setActiveActionModal(null); }}>Criar</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mudar Status Modal */}
+      {activeActionModal === "Mudar Status" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">🎯 Mudar Status</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-2">
+              {["Novo Lead", "Qualificado", "Proposta Enviada", "Negociação", "Ganho", "Perdido"].map(status => (
+                <button key={status} onClick={() => { alert(`Status mudado para: ${status}`); setActiveActionModal(null); }} className="w-full p-3 border border-[#E5E7EB] rounded-lg hover:bg-[#EFF6FF] hover:border-[#2563EB] text-left">
+                  {status}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Adicionar Tag Modal */}
+      {activeActionModal === "Adicionar Tag" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">🏷️ Adicionar Tag</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <input type="text" placeholder="Digite o nome da tag..." className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg mb-4" />
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["VIP", "Urgente", "Frio", "Quente", "Reclamação"].map(tag => (
+                <button key={tag} className="px-3 py-1 bg-[#EFF6FF] text-[#2563EB] rounded-full text-sm hover:bg-[#2563EB] hover:text-white">
+                  {tag}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-2 justify-end">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Tag adicionada!"); setActiveActionModal(null); }}>Adicionar</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Nova Proposta Modal */}
+      {activeActionModal === "Nova Proposta" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">💰 Nova Proposta</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Valor (R$)</label>
+                <input type="number" placeholder="0,00" className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Descrição</label>
+                <textarea placeholder="Detalhes da proposta..." rows={4} className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Validade</label>
+                <input type="date" className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Proposta criada!"); setActiveActionModal(null); }}>Criar Proposta</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Atribuir para IA Modal */}
+      {activeActionModal === "Atribuir para IA" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">🤖 Atribuir para IA</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Selecionar Agente IA</label>
+                <select className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg">
+                  <option>Agente de Vendas</option>
+                  <option>Agente de Suporte</option>
+                  <option>Agente de Follow-up</option>
+                </select>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Instruções Específicas</label>
+                <textarea placeholder="Ex: Focar em fechar negócio com desconto de 10%" rows={4} className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Atribuído para IA!"); setActiveActionModal(null); }}>Atribuir</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Transferir p/ Humano Modal */}
+      {activeActionModal === "Transferir p/ Humano" && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setActiveActionModal(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-[#111827]">👤 Transferir para Humano</h3>
+              <button onClick={() => setActiveActionModal(null)}><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Membro da Equipe</label>
+                <select className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg">
+                  <option>João Silva (Vendas)</option>
+                  <option>Maria Santos (Suporte)</option>
+                  <option>Pedro Costa (Gerente)</option>
+                </select>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-[#111827] mb-2 block">Motivo da Transferência</label>
+                <textarea placeholder="Ex: Cliente solicitou atendimento humano" rows={3} className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg" />
+              </div>
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+              <Button variant="outline" onClick={() => setActiveActionModal(null)}>Cancelar</Button>
+              <Button onClick={() => { alert("Transferido para humano!"); setActiveActionModal(null); }}>Transferir</Button>
             </div>
           </div>
         </div>
