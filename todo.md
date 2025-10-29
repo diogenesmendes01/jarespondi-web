@@ -202,3 +202,20 @@
 - [x] Migrar conteúdo da página WhatsAppAgents para aba WhatsApp
 - [x] Migrar conteúdo da página BaseConhecimento para aba Base de Conhecimento
 - [x] Implementar funcionalidades na aba Regras de Negócio
+
+## 🔧 Melhorias WhatsApp Tab
+
+- [ ] Modal de editar agente deve vir preenchido com dados atuais
+- [ ] Botão desativar/ativar deve alternar status do agente
+- [ ] Atualizar estado local quando agente for editado ou desativado
+
+## 🎨 Redesign Completo - Tela de Conversas
+
+- [x] Implementar novo layout com lista de conversas (280px) + chat ativo
+- [x] Card do cliente expansível (120px contraído / 400px expandido)
+- [x] Área de mensagens com bubbles estilizados (cliente esquerda / IA direita)
+- [x] Input de mensagem com ícones e toggle IA ON/OFF
+- [x] Barra de ações rápidas (Pausar IA, Resolver, Agendar, Tag, Atribuir, Arquivar)
+- [x] Sistema de status visual (🔴 urgente, 🟢 IA, 🟡 você, ⚪ resolvida)
+- [x] Filtros e busca na lista de conversas
+- [x] Detalhes completos do cliente no card expandido (CRM, tags, notas, tarefas, histórico)

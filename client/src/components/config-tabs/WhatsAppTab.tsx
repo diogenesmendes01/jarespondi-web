@@ -11,11 +11,28 @@ import {
 } from "lucide-react";
 import AgentConfigModal from "@/components/AgentConfigModal";
 
+type Agent = {
+  id: string;
+  name: string;
+  priority: string;
+  trigger: string;
+  active: boolean;
+};
+
+type WhatsAppNumber = {
+  id: string;
+  number: string;
+  name: string;
+  type: string;
+  status: string;
+  agents: Agent[];
+};
+
 export default function WhatsAppTab() {
   const [expandedNumbers, setExpandedNumbers] = useState<string[]>(["1"]);
   const [showAgentModal, setShowAgentModal] = useState(false);
-
-  const whatsappNumbers = [
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
+  const [whatsappNumbers, setWhatsappNumbers] = useState<WhatsAppNumber[]>([
     {
       id: "1",
       number: "+55 11 99999-1111",
@@ -85,7 +102,7 @@ export default function WhatsAppTab() {
         },
       ],
     },
-  ];
+  ]);
 
   const toggleNumber = (numberId: string) => {
     if (expandedNumbers.includes(numberId)) {
@@ -93,6 +110,30 @@ export default function WhatsAppTab() {
     } else {
       setExpandedNumbers([...expandedNumbers, numberId]);
     }
+  };
+
+  const handleEditAgent = (agent: Agent) => {
+    setSelectedAgent(agent);
+    setShowAgentModal(true);
+  };
+
+  const handleToggleAgent = (numberId: string, agentId: string) => {
+    setWhatsappNumbers(whatsappNumbers.map(number => {
+      if (number.id === numberId) {
+        return {
+          ...number,
+          agents: number.agents.map(agent => 
+            agent.id === agentId ? { ...agent, active: !agent.active } : agent
+          )
+        };
+      }
+      return number;
+    }));
+  };
+
+  const handleCloseModal = () => {
+    setShowAgentModal(false);
+    setSelectedAgent(null);
   };
 
   return (
@@ -206,7 +247,7 @@ export default function WhatsAppTab() {
                             variant="outline"
                             size="sm"
                             className="text-xs"
-                            onClick={() => setShowAgentModal(true)}
+                            onClick={() => handleEditAgent(agent)}
                           >
                             <Edit className="h-3 w-3 mr-1" />
                             Editar
@@ -215,6 +256,7 @@ export default function WhatsAppTab() {
                             variant="outline"
                             size="sm"
                             className="text-xs"
+                            onClick={() => handleToggleAgent(whatsapp.id, agent.id)}
                           >
                             {agent.active ? (
                               <>
