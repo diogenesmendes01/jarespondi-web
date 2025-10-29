@@ -13,11 +13,11 @@ export default function LandingPage() {
   const painPoints = [
     {
       icon: <X className="h-12 w-12 text-[#EF4444]" />,
-      text: "Demora para responder",
+      text: "Demora pra responder",
     },
     {
       icon: <X className="h-12 w-12 text-[#EF4444]" />,
-      text: "Não consegue atender 24/7",
+      text: "Não atende 24/7",
     },
     {
       icon: <X className="h-12 w-12 text-[#EF4444]" />,
@@ -56,32 +56,32 @@ export default function LandingPage() {
     {
       icon: "🤖",
       title: "IA Inteligente",
-      description: "Respostas naturais e contextualizadas que parecem humanas",
+      description: "Responde igual humano. Seu cliente nem percebe.",
     },
     {
       icon: "⚡",
       title: "Resposta Instantânea",
-      description: "Atenda em segundos, não em horas. Seus clientes não esperam.",
+      description: "Atende em segundos. Cliente não espera.",
     },
     {
       icon: "🎯",
       title: "Qualificação Automática",
-      description: "A IA identifica e prioriza os leads mais quentes",
+      description: "IA separa quem compra de quem só pergunta.",
     },
     {
       icon: "📊",
       title: "Analytics Completo",
-      description: "Dashboards com todas as métricas que importam",
+      description: "Você vê tudo: quantos entraram, quantos compraram.",
     },
     {
       icon: "🔄",
       title: "Integração Total",
-      description: "Conecte com seu CRM, calendário e ferramentas favoritas",
+      description: "Liga com seu CRM, calendário, tudo que você usa.",
     },
     {
       icon: "🛡️",
       title: "100% Seguro",
-      description: "Criptografia de ponta a ponta e conformidade LGPD",
+      description: "Dados protegidos. LGPD ok.",
     },
   ];
 
@@ -230,17 +230,17 @@ export default function LandingPage() {
         <div className="container mx-auto px-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-[56px] font-bold text-[#111827] leading-[1.2] mb-4">
-                Atendimento Instantâneo, Vendas Automáticas 24/7
+              <h1 className="text-[56px] font-bold leading-[1.2] mb-4">
+                Atendemos e vendemos pra você em 10 segundos
               </h1>
-              <p className="text-xl text-[#6B7280] mb-8">
-                Seu cliente não espera. JáRespondi.
+              <p className="text-xl mb-8">
+                Seu cliente pergunta no WhatsApp. A resposta sai na hora. E já vem com proposta.
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <Link href="/register">
                   <Button className="h-12 px-8 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-lg font-semibold">
                     <Rocket className="mr-2 h-5 w-5" />
-                    Começar Grátis - 14 dias
+                    Responder Agora
                   </Button>
                 </Link>
                 <Button

@@ -158,3 +158,7 @@
 - [x] CRM: Implementar funcionalidades nos botões de ações rápidas (enviar mensagem, agendar follow-up, criar tarefa, etc)
 
 - [x] CRM: Bug ao trocar de contato - conteúdo das abas não atualiza corretamente
+
+- [x] Atualizar design system completo com novas cores (laranja #FF5A2A, marrom #2A1A16, bege #FFF9F6)
+- [ ] Atualizar todas as páginas com novo design system
+- [x] Ajustar tipografia para ser mais direta e focada em resultados
