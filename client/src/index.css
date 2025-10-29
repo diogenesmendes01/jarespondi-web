@@ -338,3 +338,25 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+@keyframes border-spin {
+  0% {
+    border-image: linear-gradient(0deg, #FF5A2A, transparent) 1;
+  }
+  25% {
+    border-image: linear-gradient(90deg, #FF5A2A, transparent) 1;
+  }
+  50% {
+    border-image: linear-gradient(180deg, #FF5A2A, transparent) 1;
+  }
+  75% {
+    border-image: linear-gradient(270deg, #FF5A2A, transparent) 1;
+  }
+  100% {
+    border-image: linear-gradient(360deg, #FF5A2A, transparent) 1;
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 3s linear infinite;
+}

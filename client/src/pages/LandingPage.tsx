@@ -12,6 +12,7 @@ import { Link } from "wouter";
 
 export default function LandingPage() {
   const [isAnnual, setIsAnnual] = React.useState(false);
+  const [currentPlanIndex, setCurrentPlanIndex] = React.useState(0);
 
   const calculatePrice = (monthlyPrice: string) => {
     if (monthlyPrice === "Custom") return "Custom";
@@ -21,6 +22,14 @@ export default function LandingPage() {
       return Math.round(annual / 12).toString();
     }
     return monthlyPrice;
+  };
+
+  const nextPlans = () => {
+    setCurrentPlanIndex(prev => Math.min(prev + 2, plans.length - 2));
+  };
+
+  const prevPlans = () => {
+    setCurrentPlanIndex(prev => Math.max(prev - 2, 0));
   };
   const painPoints = [
     {
@@ -359,17 +368,14 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="relative p-10 bg-white rounded-xl text-center hover:-translate-y-1 transition-transform duration-300 cursor-pointer overflow-hidden"
+                className="group relative p-10 bg-white rounded-xl text-center hover:-translate-y-1 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-[#FF5A2A] hover:animate-border-spin"
               >
-                <div className="absolute inset-0 rounded-xl border-2 border-[#FF5A2A] opacity-0 hover:opacity-100 transition-opacity duration-300 animate-spin-slow" style={{animationDuration: '8s'}}></div>
-                <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-[#111827] mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-base text-[#6B7280] leading-relaxed">
                   {feature.description}
                 </p>
-                </div>
               </Card>
             ))}
           </div>
@@ -447,6 +453,78 @@ export default function LandingPage() {
                 </Button>
               </Card>
             ))}
+          </div>
+
+          {/* Mobile: Carrossel */}
+          <div className="md:hidden relative px-4">
+            <div className="flex gap-4 overflow-hidden">
+              {plans.slice(currentPlanIndex, currentPlanIndex + 2).map((plan, index) => (
+                <Card
+                  key={index}
+                  className={`relative p-6 rounded-2xl flex-shrink-0 w-[calc(50%-8px)] ${
+                    plan.popular
+                      ? "border-2 border-[#FF5A2A] shadow-lg"
+                      : "border-2 border-[#E5E7EB]"
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-white px-3 py-1 rounded-full text-xs font-bold">
+                      ⭐ POPULAR
+                    </div>
+                  )}
+                  <h3 className="text-lg font-semibold text-[#111827] mb-3">
+                    {plan.name}
+                  </h3>
+                  <div className="mb-6">
+                    <span className="text-3xl font-bold text-[#111827]">
+                      {calculatePrice(plan.price) === "Custom" ? "Custom" : `R$ ${calculatePrice(plan.price)}`}
+                    </span>
+                    {plan.price !== "Custom" && (
+                      <span className="text-sm text-[#6B7280]">/mês</span>
+                    )}
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-[#6B7280]">
+                        <Check className="h-3 w-3 text-[#10B981] flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className={`w-full h-10 text-sm ${
+                      plan.popular
+                        ? "bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
+                        : "bg-transparent border border-[#E5E7EB] text-[#111827] hover:bg-[#F9FAFB]"
+                    }`}
+                  >
+                    {plan.price === "Custom" ? "Falar com Vendas" : "Começar Agora"}
+                  </Button>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Setas de navegação */}
+            {currentPlanIndex > 0 && (
+              <button
+                onClick={prevPlans}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10"
+              >
+                <svg className="w-6 h-6 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+            {currentPlanIndex < plans.length - 2 && (
+              <button
+                onClick={nextPlans}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10"
+              >
+                <svg className="w-6 h-6 text-[#FF5A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       </section>

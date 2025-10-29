@@ -173,3 +173,6 @@
 - [x] Aumentar mais o tamanho do logo (100x90px)
 - [ ] Tornar pricing cards responsivo com carrossel (2 cards + setas em mobile)
 - [x] Remover seção FAQ e substituir por avaliações de clientes
+
+- [x] Corrigir borda laranja animada nos cards de features (remover div interna, aplicar animação corretamente)
+- [x] Implementar carrossel responsivo para pricing cards (2 cards + setas em mobile)
