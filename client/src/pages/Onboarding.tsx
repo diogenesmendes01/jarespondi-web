@@ -92,7 +92,7 @@ export default function Onboarding() {
       <div className="h-16 md:h-20 bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
-          <img src="/JaRespondi-logo.png" alt="JáRespondi" className="h-12 md:h-14" />
+          <img src="/logo.png" alt="JáRespondi" className="h-12 md:h-14" />
 
           {/* Skip Button */}
           <Button
@@ -154,7 +154,7 @@ export default function Onboarding() {
             <div className="text-center space-y-6 md:space-y-8">
               <div className="text-5xl md:text-8xl mb-4 md:mb-8">🎉</div>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] px-4">
-                Bem-vindo ao JáRespondi! 🎉
+                Bem-vindo! 🎉
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-[#6B7280] px-4">
                 Em menos de 5 minutos você terá seu assistente IA funcionando

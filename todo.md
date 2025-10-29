@@ -197,3 +197,6 @@
 - [x] Bug Onboarding: Textos não adaptados corretamente para mobile
 
 - [x] Mover indicador de progresso do header para entre header e conteúdo
+
+- [x] Bug Onboarding: Logo quebrada (não está carregando)
+- [x] Bug Onboarding: Remover texto "JáRespondi" duplicado
