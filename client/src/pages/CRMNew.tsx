@@ -30,6 +30,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { useEffect } from "react";
 
 export default function CRMNew() {
   const [location] = useLocation();
@@ -38,6 +39,11 @@ export default function CRMNew() {
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [activeActionModal, setActiveActionModal] = useState<string | null>(null);
+
+  // Resetar aba quando trocar de contato
+  useEffect(() => {
+    setActiveTab("ia");
+  }, [selectedContact]);
 
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },

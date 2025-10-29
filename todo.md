@@ -156,3 +156,5 @@
 - [x] CRM: Ajustar ações sugeridas pela IA - deixar claro que é a IA quem executa, mostrar agendamento/prazo
 
 - [x] CRM: Implementar funcionalidades nos botões de ações rápidas (enviar mensagem, agendar follow-up, criar tarefa, etc)
+
+- [x] CRM: Bug ao trocar de contato - conteúdo das abas não atualiza corretamente
