@@ -121,7 +121,7 @@ export default function Dashboard() {
           <img 
             src="/logo.png" 
             alt="JáRespondi" 
-            className={sidebarCollapsed ? "h-8" : "h-10"}
+            className={sidebarCollapsed ? "h-10" : "h-14"}
           />
         </div>
 
@@ -133,8 +133,8 @@ export default function Dashboard() {
 
             return (
               <Link key={item.path} href={item.path}>
-                <a
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                <div
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors cursor-pointer ${
                     isActive
                       ? "bg-[#FFF9F6] text-[#FF5A2A]"
                       : "text-[#6B7280] hover:bg-[#F3F4F6]"
@@ -144,7 +144,7 @@ export default function Dashboard() {
                   {!sidebarCollapsed && (
                     <span className="text-sm font-medium">{item.label}</span>
                   )}
-                </a>
+                </div>
               </Link>
             );
           })}
