@@ -190,3 +190,15 @@
 - [x] Overlay dos modais muito transparente - ajustado para 80% de opacidade
 - [x] Conteúdo do modal transparente - forçado bg-white no DialogContent
 - [x] Dropdown de status no modal ficando transparente - forçado bg-white no SelectContent
+
+## 🔄 Refatoração de Configurações
+
+- [x] Remover WhatsApp e Base de Conhecimento da sidebar
+- [x] Criar página Configurações com abas (tabs)
+- [x] Aba WhatsApp - estrutura criada (conteúdo será migrado)
+- [x] Aba Base de Conhecimento - estrutura criada (conteúdo será migrado)
+- [x] Aba Regras de Negócio - estrutura criada (nova seção)
+- [x] Atualizar menuItems.ts removendo itens da sidebar
+- [ ] Migrar conteúdo da página WhatsAppAgents para aba WhatsApp
+- [ ] Migrar conteúdo da página BaseConhecimento para aba Base de Conhecimento
+- [ ] Implementar funcionalidades na aba Regras de Negócio

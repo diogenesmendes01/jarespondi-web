@@ -6,7 +6,5 @@ export const dashboardMenuItems = [
   { icon: Users, label: "CRM", path: "/dashboard/crm" },
   { icon: Send, label: "Campanhas", path: "/dashboard/campanhas" },
   { icon: BarChart3, label: "Analytics", path: "/dashboard/analytics" },
-  { icon: MessageCircle, label: "WhatsApp", path: "/dashboard/whatsapp" },
-  { icon: BookOpen, label: "Base de Conhecimento", path: "/dashboard/base-conhecimento" },
   { icon: Settings, label: "Configurações", path: "/dashboard/configuracoes" },
 ];
