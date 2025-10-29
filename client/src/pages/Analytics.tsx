@@ -1,4 +1,5 @@
-import DashboardLayout from "@/components/DashboardLayout";
+import Sidebar from "@/components/Sidebar";
+import { dashboardMenuItems } from "@/lib/menuItems";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { 
@@ -77,17 +78,20 @@ export default function Analytics() {
 
   if (isLoading) {
     return (
-      <DashboardLayout>
-        <div className="flex items-center justify-center h-96">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      <div className="min-h-screen bg-[#F9FAFB] flex">
+        <Sidebar menuItems={dashboardMenuItems} />
+        <div className="flex-1 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-[#FF5A2A]" />
         </div>
-      </DashboardLayout>
+      </div>
     );
   }
 
   return (
-    <DashboardLayout>
-      <div className="space-y-6">
+    <div className="min-h-screen bg-[#F9FAFB] flex">
+      <Sidebar menuItems={dashboardMenuItems} />
+      <div className="flex-1 p-8">
+        <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
@@ -372,7 +376,8 @@ export default function Analytics() {
             </CardContent>
           </Card>
         </div>
+        </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -26,8 +26,9 @@ import {
   Users,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { dashboardMenuItems } from "@/lib/menuItems";
+import { AddContactModal, EditContactModal, DeleteContactModal } from "@/components/ContactModals";
 
 export default function CRMNew() {
 
@@ -36,6 +37,13 @@ export default function CRMNew() {
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [activeActionModal, setActiveActionModal] = useState<string | null>(null);
+  
+  // Estados para modais CRUD
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [contactToEdit, setContactToEdit] = useState<any>(null);
+  const [contactToDelete, setContactToDelete] = useState<any>(null);
 
   // Resetar aba quando trocar de contato
   useEffect(() => {
@@ -44,7 +52,7 @@ export default function CRMNew() {
 
 
 
-  const contacts = [
+  const [contacts, setContacts] = useState([
     {
       id: 1,
       name: "Carlos Fernandes",
@@ -75,7 +83,36 @@ export default function CRMNew() {
       lastContact: "1 dia atrás",
       tags: [],
     },
-  ];
+  ]);
+
+  // Funções CRUD
+  const handleAddContact = (newContact: any) => {
+    setContacts([...contacts, newContact]);
+  };
+
+  const handleUpdateContact = (updatedContact: any) => {
+    setContacts(contacts.map(c => c.id === updatedContact.id ? updatedContact : c));
+    if (selectedContact?.id === updatedContact.id) {
+      setSelectedContact(updatedContact);
+    }
+  };
+
+  const handleDeleteContact = () => {
+    setContacts(contacts.filter(c => c.id !== contactToDelete.id));
+    if (selectedContact?.id === contactToDelete.id) {
+      setSelectedContact(null);
+    }
+  };
+
+  const openEditModal = (contact: any) => {
+    setContactToEdit(contact);
+    setShowEditModal(true);
+  };
+
+  const openDeleteModal = (contact: any) => {
+    setContactToDelete(contact);
+    setShowDeleteModal(true);
+  };
 
   const aiSummary = {
     summary: `Cliente interessado em procedimento de cirurgia plástica (rinoplastia). Mencionou que já pesquisou com 2 clínicas concorrentes. Demonstra urgência (quer fazer em 2 meses). Budget estimado: R$ 8.000-12.000.
@@ -238,7 +275,10 @@ Motivação: Casamento em março`,
         {/* Header */}
         <header className="h-16 bg-white border-b border-[#E5E7EB] flex items-center justify-between px-8">
           <h1 className="text-xl font-semibold text-[#111827]">CRM</h1>
-          <Button className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white">
+          <Button 
+            className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
+            onClick={() => setShowAddModal(true)}
+          >
             <Plus className="h-4 w-4 mr-2" />
             Novo Contato
           </Button>
@@ -294,11 +334,33 @@ Motivação: Casamento em março`,
                         <p className="text-xs text-[#6B7280]">{contact.phone}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-lg">🔥</span>
-                      <span className="text-sm font-bold text-[#EF4444]">
-                        {contact.score}
-                      </span>
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
+                        <span className="text-lg">🔥</span>
+                        <span className="text-sm font-bold text-[#EF4444]">
+                          {contact.score}
+                        </span>
+                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openEditModal(contact);
+                        }}
+                        className="p-1 hover:bg-[#E5E7EB] rounded transition-colors"
+                        title="Editar contato"
+                      >
+                        <Edit className="h-4 w-4 text-[#6B7280]" />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openDeleteModal(contact);
+                        }}
+                        className="p-1 hover:bg-[#FEE2E2] rounded transition-colors"
+                        title="Remover contato"
+                      >
+                        <X className="h-4 w-4 text-[#EF4444]" />
+                      </button>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
@@ -1188,6 +1250,27 @@ Motivação: Casamento em março`,
           </div>
         </div>
       )}
+
+      {/* Modais CRUD */}
+      <AddContactModal
+        open={showAddModal}
+        onClose={() => setShowAddModal(false)}
+        onAdd={handleAddContact}
+      />
+
+      <EditContactModal
+        open={showEditModal}
+        onClose={() => setShowEditModal(false)}
+        onUpdate={handleUpdateContact}
+        contact={contactToEdit}
+      />
+
+      <DeleteContactModal
+        open={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+        onDelete={handleDeleteContact}
+        contact={contactToDelete}
+      />
     </div>
   );
 }

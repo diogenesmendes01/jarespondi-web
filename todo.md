@@ -97,6 +97,18 @@
 - [x] Tabela de integrações
 - [x] Tabela de conhecimento (knowledge base)
 
+## 🔄 Em Progresso
+
+### CRUD de Contatos (CRM)
+- [x] Implementar modal de adicionar contato
+- [x] Implementar modal de editar contato
+- [x] Implementar funcionalidade de remover contato
+- [x] Gerenciamento de estado local (useState)
+- [x] Validações de formulário
+- [x] Feedback visual (toasts)
+- [x] Botões de editar e remover em cada contato
+- [x] Botão de adicionar novo contato no header
+
 ## 📋 Backlog (Próximas Features)
 
 ### Páginas Faltantes
@@ -162,3 +174,13 @@
 3. ✅ Sidebar duplicada em múltiplas páginas (agora usa componente único)
 4. ✅ Logo usando texto ao invés de imagem em Login/Register
 5. ✅ Tamanho da logo inconsistente (padronizado em 140px)
+
+### Migração DashboardLayout para Sidebar
+- [x] Migrar Analytics.tsx para usar Sidebar
+- [x] Migrar Campanhas.tsx para usar Sidebar
+- [x] Migrar Conversas.tsx para usar Sidebar
+- [x] Todas as 8 páginas do dashboard agora usam Sidebar consistente
+
+## 🐛 Bugs Conhecidos
+
+(Nenhum bug conhecido no momento - todos corrigidos!)
