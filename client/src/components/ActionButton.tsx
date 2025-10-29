@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
+import { tokens } from "@/lib/design-tokens";
 
 interface ActionButtonProps {
   icon: LucideIcon;
@@ -26,7 +27,7 @@ export default function ActionButton({
       onClick={onClick}
       className={`flex items-center gap-1.5 ${className}`}
     >
-      <Icon className="h-4 w-4" />
+      <Icon size={tokens.icons.sizes.sm} strokeWidth={tokens.icons.strokeWidth.normal} />
       <span>{children}</span>
     </Button>
   );

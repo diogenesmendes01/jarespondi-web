@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -44,17 +44,17 @@
 }
 
 :root {
-  /* === CORES OFICIAIS JARESPONDI === */
+  /* === DESIGN SYSTEM JARESPONDI === */
   
-  /* Primary (Laranja Principal) - #FF5A2A */
-  --primary: 16 90% 58%;
-  --primary-foreground: 42 26% 12%; /* #2A1A16 */
+  /* Primary (Laranja - #FF5A2A) */
+  --primary: 16 90% 58%; /* #FF5A2A */
+  --primary-foreground: 16 28% 13%; /* #2A1A16 */
   --primary-hover: 9 83% 51%; /* #E4491F */
   
-  /* Secondary (Laranja Hover) */
-  --secondary: 9 83% 51%; /* #E4491F */
-  --secondary-foreground: 0 0% 100%;
-  --secondary-hover: 9 83% 46%;
+  /* Secondary (Café - #2A1A16) */
+  --secondary: 16 28% 13%; /* #2A1A16 */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary-hover: 16 20% 10%; /* #241612 */
   
   /* Success (Verde suave) */
   --success: 142 71% 45%;
@@ -167,6 +167,11 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     line-height: 1.6;
+  }
+  
+  /* Headings usam Space Grotesk */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
   
   button:not(:disabled),

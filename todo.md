@@ -233,3 +233,21 @@
 - [x] Ajustar espaçamento entre ícone e texto nos botões (gap-1.5)
 - [x] Aplicar ActionButton nos botões de ações rápidas
 - [x] Padrão: ActionButton com icon prop, gap-1.5, variant outline, size sm
+
+## 🎨 Implementação do Design System
+
+- [x] Criar arquivo design-tokens.ts com todas as definições
+- [x] Atualizar index.css com novas cores (Tailwind v4)
+- [x] Instalar fontes Space Grotesk e Inter via Google Fonts
+- [x] Configurar fontes no index.css (Space Grotesk para headings, Inter para body)
+- [x] Atualizar variáveis CSS com cores corretas (primary #FF5A2A, secondary #2A1A16)
+- [x] Refatorar componente ActionButton para usar design tokens (ícones com strokeWidth 2)
+- [ ] Refatorar componente Sidebar para usar design tokens
+- [ ] Refatorar página Conversas para usar design tokens
+- [ ] Refatorar página Dashboard para usar design tokens
+- [ ] Refatorar página CRM para usar design tokens
+- [ ] Refatorar página Configurações (abas) para usar design tokens
+- [ ] Atualizar todos os componentes shadcn/ui (Button, Dialog, Select, etc.)
+- [ ] Padronizar cores: primary (laranja #FF5A2A), secondary (café #2A1A16)
+- [ ] Padronizar tipografia: Space Grotesk (títulos) + Inter (corpo)
+- [ ] Padronizar ícones: Lucide React com strokeWidth 2
