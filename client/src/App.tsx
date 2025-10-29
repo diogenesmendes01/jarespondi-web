@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Onboarding from "./pages/Onboarding";
+import Dashboard from "./pages/Dashboard";
 import Conversas from "./pages/Conversas";
 import CRM from "./pages/CRM";
 import Campanhas from "./pages/Campanhas";
@@ -22,6 +23,7 @@ function Router() {
       <Route path={"/login"} component={Login} />
       <Route path={"/register"} component={Register} />
       <Route path={"/onboarding"} component={Onboarding} />
+      <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/conversas"} component={Conversas} />
       <Route path={"/crm"} component={CRM} />
       <Route path={"/campanhas"} component={Campanhas} />

@@ -59,3 +59,8 @@
 - [ ] Integração WhatsApp Web
 - [ ] Integração WhatsApp API
 - [ ] Integração com IA
+
+## Bugs e Ajustes
+- [x] Criar rota /dashboard
+- [x] Criar página Dashboard completa com métricas
+- [x] Adicionar navegação lateral (sidebar)
