@@ -329,7 +329,7 @@ export default function LandingPage() {
               <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8">
                 Seu cliente pergunta no WhatsApp. A resposta sai na hora. E já vem com proposta.
               </p>
-              <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex flex-wrap gap-4 md:gap-6 mb-6">
                 <Link href="/register">
                   <Button className="h-10 md:h-12 px-6 md:px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base md:text-lg font-semibold">
                     <Rocket className="mr-2 h-5 w-5" />

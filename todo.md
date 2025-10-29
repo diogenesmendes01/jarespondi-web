@@ -184,3 +184,5 @@
 - [x] Bug: Tipografia não responsiva em mobile - textos muito grandes, precisa reduzir fontes
 
 - [x] Implementar menu hamburguer mobile no header com sidebar de navegação
+
+- [x] Ajustar espaçamento entre botões no hero section (muito grudados)
