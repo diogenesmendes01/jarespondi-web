@@ -189,3 +189,4 @@
 
 - [x] Overlay dos modais muito transparente - ajustado para 80% de opacidade
 - [x] Conteúdo do modal transparente - forçado bg-white no DialogContent
+- [x] Dropdown de status no modal ficando transparente - forçado bg-white no SelectContent
