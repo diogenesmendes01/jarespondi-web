@@ -111,7 +111,7 @@ Sempre use emojis sutis 😊`,
         <div
           key={index}
           className={`h-2 flex-1 rounded-full ${
-            index < currentStep ? "bg-[#2563EB]" : "bg-[#E5E7EB]"
+            index < currentStep ? "bg-[#FF5A2A]" : "bg-[#E5E7EB]"
           }`}
         />
       ))}
@@ -133,7 +133,7 @@ Sempre use emojis sutis 😊`,
           value={formData.name}
           onChange={(e) => updateField("name", e.target.value)}
           placeholder="Atendente Inicial"
-          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB]"
+          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A]"
         />
       </div>
 
@@ -146,7 +146,7 @@ Sempre use emojis sutis 😊`,
           onChange={(e) => updateField("description", e.target.value)}
           placeholder="Faz primeira triagem e direciona para o agente correto"
           rows={3}
-          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB]"
+          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A]"
         />
       </div>
 
@@ -157,7 +157,7 @@ Sempre use emojis sutis 😊`,
         <select
           value={formData.whatsappNumber}
           onChange={(e) => updateField("whatsappNumber", e.target.value)}
-          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB]"
+          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A]"
         >
           <option value="">Selecione um número</option>
           <option value="+55 11 99999-1111">+55 11 99999-1111 (Recepção)</option>
@@ -208,7 +208,7 @@ Sempre use emojis sutis 😊`,
               value={formData.keywords}
               onChange={(e) => updateField("keywords", e.target.value)}
               placeholder="agendar, consulta, horário, marcar"
-              className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB] ml-8"
+              className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A] ml-8"
             />
           )}
         </div>
@@ -252,7 +252,7 @@ Sempre use emojis sutis 😊`,
                     }}
                     className={`w-8 h-8 rounded text-sm font-medium ${
                       formData.scheduleDays[index]
-                        ? "bg-[#2563EB] text-white"
+                        ? "bg-[#FF5A2A] text-white"
                         : "bg-[#F3F4F6] text-[#6B7280]"
                     }`}
                   >
@@ -307,7 +307,7 @@ Sempre use emojis sutis 😊`,
           value={formData.systemPrompt}
           onChange={(e) => updateField("systemPrompt", e.target.value)}
           rows={12}
-          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB] font-mono text-sm"
+          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A] font-mono text-sm"
         />
         <div className="flex gap-2 mt-2">
           <Button variant="outline" size="sm">
@@ -545,7 +545,7 @@ Sempre use emojis sutis 😊`,
           value={formData.handoffMessage}
           onChange={(e) => updateField("handoffMessage", e.target.value)}
           rows={3}
-          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB]"
+          className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A]"
         />
       </div>
 
@@ -662,7 +662,7 @@ Sempre use emojis sutis 😊`,
           </Button>
 
           {currentStep < totalSteps ? (
-            <Button onClick={nextStep} className="bg-[#2563EB] hover:bg-[#1D4ED8]">
+            <Button onClick={nextStep} className="bg-[#FF5A2A] hover:bg-[#E4491F]">
               Próximo
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>

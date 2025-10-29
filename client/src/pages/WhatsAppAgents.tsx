@@ -117,7 +117,7 @@ export default function WhatsAppAgents() {
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-[#E5E7EB] flex flex-col">
         <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
-          <div className="text-xl font-bold text-[#2563EB]">JáRespondi</div>
+          <div className="text-xl font-bold text-[#FF5A2A]">JáRespondi</div>
         </div>
 
         <nav className="flex-1 p-4 space-y-2">
@@ -130,7 +130,7 @@ export default function WhatsAppAgents() {
                 <a
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                     isActive
-                      ? "bg-[#EFF6FF] text-[#2563EB]"
+                      ? "bg-[#FFF9F6] text-[#FF5A2A]"
                       : "text-[#6B7280] hover:bg-[#F3F4F6]"
                   }`}
                 >
@@ -144,7 +144,7 @@ export default function WhatsAppAgents() {
 
         <div className="p-4 border-t border-[#E5E7EB]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-semibold">
+            <div className="w-10 h-10 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-semibold">
               U
             </div>
             <div className="flex-1 min-w-0">
@@ -164,7 +164,7 @@ export default function WhatsAppAgents() {
           </h1>
           <Button
             onClick={() => setShowAgentModal(true)}
-            className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
+            className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
           >
             <Plus className="h-4 w-4 mr-2" />
             Adicionar Número

@@ -40,8 +40,8 @@ export default function Dashboard() {
       change: "+12%",
       trend: "up",
       icon: MessageSquare,
-      color: "text-[#2563EB]",
-      bgColor: "bg-[#EFF6FF]",
+      color: "text-[#FF5A2A]",
+      bgColor: "bg-[#FFF9F6]",
     },
     {
       title: "Novos Leads",
@@ -108,9 +108,9 @@ export default function Dashboard() {
         {/* Logo */}
         <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
           {sidebarCollapsed ? (
-            <div className="text-2xl font-bold text-[#2563EB]">J</div>
+            <div className="text-2xl font-bold text-[#FF5A2A]">J</div>
           ) : (
-            <div className="text-xl font-bold text-[#2563EB]">JáRespondi</div>
+            <div className="text-xl font-bold text-[#FF5A2A]">JáRespondi</div>
           )}
         </div>
 
@@ -125,7 +125,7 @@ export default function Dashboard() {
                 <a
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                     isActive
-                      ? "bg-[#EFF6FF] text-[#2563EB]"
+                      ? "bg-[#FFF9F6] text-[#FF5A2A]"
                       : "text-[#6B7280] hover:bg-[#F3F4F6]"
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function Dashboard() {
         {/* User */}
         <div className="p-4 border-t border-[#E5E7EB]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-semibold">
+            <div className="w-10 h-10 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-semibold">
               U
             </div>
             {!sidebarCollapsed && (
@@ -178,7 +178,7 @@ export default function Dashboard() {
               <input
                 type="text"
                 placeholder="Buscar..."
-                className="w-64 h-9 pl-10 pr-4 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#2563EB]"
+                className="w-64 h-9 pl-10 pr-4 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#FF5A2A]"
               />
             </div>
 
@@ -248,8 +248,8 @@ export default function Dashboard() {
                   return (
                     <Link key={index} href={action.path}>
                       <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F9FAFB] transition-colors">
-                        <div className="w-10 h-10 bg-[#EFF6FF] rounded-lg flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-[#2563EB]" />
+                        <div className="w-10 h-10 bg-[#FFF9F6] rounded-lg flex items-center justify-center">
+                          <Icon className="h-5 w-5 text-[#FF5A2A]" />
                         </div>
                         <span className="text-sm font-medium text-[#111827]">
                           {action.label}
@@ -279,7 +279,7 @@ export default function Dashboard() {
                       <AlertCircle className="h-5 w-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
                     )}
                     {alert.type === "info" && (
-                      <AlertCircle className="h-5 w-5 text-[#2563EB] flex-shrink-0 mt-0.5" />
+                      <AlertCircle className="h-5 w-5 text-[#FF5A2A] flex-shrink-0 mt-0.5" />
                     )}
                     <div className="flex-1">
                       <p className="text-sm text-[#111827]">{alert.message}</p>

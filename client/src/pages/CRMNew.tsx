@@ -227,7 +227,7 @@ Motivação: Casamento em março`,
   ];
 
   const quickActions = [
-    { icon: MessageCircle, label: "Enviar Mensagem", color: "text-[#2563EB]" },
+    { icon: MessageCircle, label: "Enviar Mensagem", color: "text-[#FF5A2A]" },
     { icon: Phone, label: "Ligar", color: "text-[#10B981]", disabled: true },
     { icon: Clock, label: "Agendar Follow-up", color: "text-[#F59E0B]" },
     { icon: FileText, label: "Criar Tarefa", color: "text-[#8B5CF6]" },
@@ -243,7 +243,7 @@ Motivação: Casamento em março`,
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-[#E5E7EB] flex flex-col">
         <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
-          <div className="text-xl font-bold text-[#2563EB]">JáRespondi</div>
+          <div className="text-xl font-bold text-[#FF5A2A]">JáRespondi</div>
         </div>
 
         <nav className="flex-1 p-4 space-y-2">
@@ -256,7 +256,7 @@ Motivação: Casamento em março`,
                 <a
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                     isActive
-                      ? "bg-[#EFF6FF] text-[#2563EB]"
+                      ? "bg-[#FFF9F6] text-[#FF5A2A]"
                       : "text-[#6B7280] hover:bg-[#F3F4F6]"
                   }`}
                 >
@@ -270,7 +270,7 @@ Motivação: Casamento em março`,
 
         <div className="p-4 border-t border-[#E5E7EB]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-semibold">
+            <div className="w-10 h-10 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center font-semibold">
               U
             </div>
             <div className="flex-1 min-w-0">
@@ -286,7 +286,7 @@ Motivação: Casamento em março`,
         {/* Header */}
         <header className="h-16 bg-white border-b border-[#E5E7EB] flex items-center justify-between px-8">
           <h1 className="text-xl font-semibold text-[#111827]">CRM</h1>
-          <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
+          <Button className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white">
             <Plus className="h-4 w-4 mr-2" />
             Novo Contato
           </Button>
@@ -303,7 +303,7 @@ Motivação: Casamento em março`,
                 <input
                   type="text"
                   placeholder="Buscar contatos..."
-                  className="w-full h-10 pl-10 pr-4 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#2563EB]"
+                  className="w-full h-10 pl-10 pr-4 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#FF5A2A]"
                 />
               </div>
               <div className="flex gap-2">
@@ -327,12 +327,12 @@ Motivação: Casamento em março`,
                   key={contact.id}
                   onClick={() => setSelectedContact(contact)}
                   className={`p-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB] transition-colors ${
-                    selectedContact?.id === contact.id ? "bg-[#EFF6FF]" : ""
+                    selectedContact?.id === contact.id ? "bg-[#FFF9F6]" : ""
                   }`}
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white flex items-center justify-center font-semibold">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF5A2A] to-[#E4491F] text-white flex items-center justify-center font-semibold">
                         {contact.name.charAt(0)}
                       </div>
                       <div>
@@ -350,7 +350,7 @@ Motivação: Casamento em março`,
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs px-2 py-1 rounded-full bg-[#DBEAFE] text-[#1E40AF]">
+                    <span className="text-xs px-2 py-1 rounded-full bg-[#DBEAFE] text-[#E4491F]">
                       {contact.status}
                     </span>
                     <span className="text-xs text-[#6B7280]">
@@ -381,7 +381,7 @@ Motivação: Casamento em março`,
               <div className="p-6 border-b border-[#E5E7EB]">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white flex items-center justify-center text-2xl font-semibold">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF5A2A] to-[#E4491F] text-white flex items-center justify-center text-2xl font-semibold">
                       {selectedContact.name.charAt(0)}
                     </div>
                     <div>
@@ -443,7 +443,7 @@ Motivação: Casamento em março`,
                       onClick={() => setActiveTab(tab.id as any)}
                       className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
                         activeTab === tab.id
-                          ? "border-[#2563EB] text-[#2563EB]"
+                          ? "border-[#FF5A2A] text-[#FF5A2A]"
                           : "border-transparent text-[#6B7280] hover:text-[#111827]"
                       }`}
                     >
@@ -485,7 +485,7 @@ Motivação: Casamento em março`,
                                 ? "bg-[#FEE2E2] border-[#EF4444]"
                                 : action.priority === "high"
                                 ? "bg-[#FEF3C7] border-[#F59E0B]"
-                                : "bg-[#EFF6FF] border-[#2563EB]"
+                                : "bg-[#FFF9F6] border-[#FF5A2A]"
                             }`}
                           >
                             <div className="flex items-start justify-between">
@@ -639,7 +639,7 @@ Motivação: Casamento em março`,
                       <textarea
                         placeholder="Escreva sua nota..."
                         rows={4}
-                        className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#2563EB] mb-3"
+                        className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#FF5A2A] mb-3"
                       />
                       <div className="flex items-center justify-between">
                         <select className="px-3 py-2 border border-[#E5E7EB] rounded-lg text-sm">
@@ -841,7 +841,7 @@ Motivação: Casamento em março`,
               <div className="p-4 border-t border-[#E5E7EB] space-y-2">
                 <Button
                   onClick={() => setShowQuickActions(!showQuickActions)}
-                  className="w-full bg-[#2563EB] hover:bg-[#1D4ED8]"
+                  className="w-full bg-[#FF5A2A] hover:bg-[#E4491F]"
                 >
                   ⚡ Ações Rápidas
                 </Button>
@@ -904,7 +904,7 @@ Motivação: Casamento em março`,
                         setShowQuickActions(false);
                       }
                     }}
-                    className={`p-4 border-2 border-[#E5E7EB] rounded-xl hover:border-[#2563EB] hover:bg-[#EFF6FF] transition-all ${
+                    className={`p-4 border-2 border-[#E5E7EB] rounded-xl hover:border-[#FF5A2A] hover:bg-[#FFF9F6] transition-all ${
                       action.disabled ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >
@@ -938,7 +938,7 @@ Motivação: Casamento em março`,
             {discussions.map((discussion) => (
               <div key={discussion.id} className="space-y-2">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#2563EB] text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
                     {discussion.avatar}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -972,7 +972,7 @@ Motivação: Casamento em março`,
                           {reaction.emoji} {reaction.count}
                         </button>
                       ))}
-                      <button className="text-xs text-[#2563EB] hover:underline">
+                      <button className="text-xs text-[#FF5A2A] hover:underline">
                         💬 Responder
                       </button>
                     </div>
@@ -1017,12 +1017,12 @@ Motivação: Casamento em março`,
               <textarea
                 placeholder="@mencionar [Escrever comentário...]"
                 rows={2}
-                className="flex-1 px-3 py-2 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#2563EB] resize-none"
+                className="flex-1 px-3 py-2 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#FF5A2A] resize-none"
               />
               <Button size="sm">
                 <Paperclip className="h-4 w-4" />
               </Button>
-              <Button size="sm" className="bg-[#2563EB]">
+              <Button size="sm" className="bg-[#FF5A2A]">
                 Enviar
               </Button>
             </div>
@@ -1114,7 +1114,7 @@ Motivação: Casamento em março`,
             </div>
             <div className="space-y-2">
               {["Novo Lead", "Qualificado", "Proposta Enviada", "Negociação", "Ganho", "Perdido"].map(status => (
-                <button key={status} onClick={() => { alert(`Status mudado para: ${status}`); setActiveActionModal(null); }} className="w-full p-3 border border-[#E5E7EB] rounded-lg hover:bg-[#EFF6FF] hover:border-[#2563EB] text-left">
+                <button key={status} onClick={() => { alert(`Status mudado para: ${status}`); setActiveActionModal(null); }} className="w-full p-3 border border-[#E5E7EB] rounded-lg hover:bg-[#FFF9F6] hover:border-[#FF5A2A] text-left">
                   {status}
                 </button>
               ))}
@@ -1134,7 +1134,7 @@ Motivação: Casamento em março`,
             <input type="text" placeholder="Digite o nome da tag..." className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg mb-4" />
             <div className="flex flex-wrap gap-2 mb-4">
               {["VIP", "Urgente", "Frio", "Quente", "Reclamação"].map(tag => (
-                <button key={tag} className="px-3 py-1 bg-[#EFF6FF] text-[#2563EB] rounded-full text-sm hover:bg-[#2563EB] hover:text-white">
+                <button key={tag} className="px-3 py-1 bg-[#FFF9F6] text-[#FF5A2A] rounded-full text-sm hover:bg-[#FF5A2A] hover:text-white">
                   {tag}
                 </button>
               ))}

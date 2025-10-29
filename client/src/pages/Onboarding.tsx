@@ -92,7 +92,7 @@ export default function Onboarding() {
       <div className="h-20 bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-12">
           {/* Logo */}
-          <div className="text-2xl font-bold text-[#2563EB]">JáRespondi</div>
+          <div className="text-2xl font-bold text-[#FF5A2A]">JáRespondi</div>
 
           {/* Progress Indicator */}
           <div className="flex flex-col items-center">
@@ -109,7 +109,7 @@ export default function Onboarding() {
                         isCompleted
                           ? "bg-[#10B981] text-white"
                           : isActive
-                          ? "bg-[#2563EB] text-white"
+                          ? "bg-[#FF5A2A] text-white"
                           : "bg-[#E5E7EB] text-[#6B7280]"
                       }`}
                     >
@@ -118,7 +118,7 @@ export default function Onboarding() {
                     {stepNum < totalSteps && (
                       <div
                         className={`w-10 h-0.5 ${
-                          isCompleted ? "bg-[#2563EB]" : "bg-[#E5E7EB]"
+                          isCompleted ? "bg-[#FF5A2A]" : "bg-[#E5E7EB]"
                         }`}
                       />
                     )}
@@ -183,7 +183,7 @@ export default function Onboarding() {
               <div className="pt-8">
                 <Button
                   onClick={handleNext}
-                  className="h-11 px-8 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-base font-semibold"
+                  className="h-11 px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base font-semibold"
                 >
                   Começar →
                 </Button>
@@ -209,7 +209,7 @@ export default function Onboarding() {
                   onClick={() => handleConnectionSelect("web")}
                   className={`relative p-8 cursor-pointer transition-all hover:shadow-lg ${
                     connectionType === "web"
-                      ? "border-2 border-[#2563EB] bg-[#F0F6FF]"
+                      ? "border-2 border-[#FF5A2A] bg-[#F0F6FF]"
                       : "border-2 border-[#E5E7EB]"
                   }`}
                 >
@@ -217,7 +217,7 @@ export default function Onboarding() {
                     Recomendado
                   </div>
                   <div className="text-center space-y-4">
-                    <Smartphone className="h-16 w-16 mx-auto text-[#2563EB]" />
+                    <Smartphone className="h-16 w-16 mx-auto text-[#FF5A2A]" />
                     <h3 className="text-2xl font-semibold text-[#111827]">
                       WhatsApp Web
                     </h3>
@@ -239,7 +239,7 @@ export default function Onboarding() {
                         <span>Ideal para testes</span>
                       </li>
                     </ul>
-                    <Button className="w-full mt-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
+                    <Button className="w-full mt-4 bg-[#FF5A2A] hover:bg-[#E4491F] text-white">
                       Escolher
                     </Button>
                   </div>
@@ -250,7 +250,7 @@ export default function Onboarding() {
                   onClick={() => handleConnectionSelect("api")}
                   className={`p-8 cursor-pointer transition-all hover:shadow-lg ${
                     connectionType === "api"
-                      ? "border-2 border-[#2563EB] bg-[#F0F6FF]"
+                      ? "border-2 border-[#FF5A2A] bg-[#F0F6FF]"
                       : "border-2 border-[#E5E7EB]"
                   }`}
                 >
@@ -308,7 +308,7 @@ export default function Onboarding() {
                   "Aponte seu celular para esta tela",
                 ].map((instruction, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2563EB] text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-[#FF5A2A] text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
                       {index + 1}
                     </div>
                     <p className="text-base text-[#6B7280] pt-0.5">{instruction}</p>
@@ -336,7 +336,7 @@ export default function Onboarding() {
                 <Button
                   variant="ghost"
                   onClick={() => setQrCodeTimer(83)}
-                  className="text-sm font-medium text-[#2563EB]"
+                  className="text-sm font-medium text-[#FF5A2A]"
                 >
                   <RefreshCw className="h-4 w-4 mr-2" />
                   Atualizar Código
@@ -449,8 +449,8 @@ export default function Onboarding() {
                         onClick={() => setAgentConfig({ ...agentConfig, tone })}
                         className={`h-11 rounded-lg border-2 font-medium transition-all ${
                           agentConfig.tone === tone
-                            ? "bg-[#2563EB] border-[#2563EB] text-white"
-                            : "bg-white border-[#E5E7EB] text-[#111827] hover:border-[#2563EB]"
+                            ? "bg-[#FF5A2A] border-[#FF5A2A] text-white"
+                            : "bg-white border-[#E5E7EB] text-[#111827] hover:border-[#FF5A2A]"
                         }`}
                       >
                         {tone === "formal" && "Formal"}
@@ -466,7 +466,7 @@ export default function Onboarding() {
                   <p className="text-sm font-semibold text-[#6B7280] mb-3">
                     💬 Preview de como a IA vai responder:
                   </p>
-                  <div className="bg-[#2563EB] text-white p-4 rounded-xl rounded-bl-none max-w-[80%] text-[15px]">
+                  <div className="bg-[#FF5A2A] text-white p-4 rounded-xl rounded-bl-none max-w-[80%] text-[15px]">
                     {getTonePreview()}
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export default function Onboarding() {
                   </Button>
                   <Button
                     onClick={handleNext}
-                    className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
+                    className="bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
                   >
                     Confirmar →
                   </Button>
@@ -503,8 +503,8 @@ export default function Onboarding() {
               </p>
 
               {/* Test Section */}
-              <div className="max-w-lg mx-auto p-8 bg-[#F0F6FF] border-2 border-dashed border-[#2563EB] rounded-2xl">
-                <p className="text-base font-semibold text-[#2563EB] mb-4">
+              <div className="max-w-lg mx-auto p-8 bg-[#F0F6FF] border-2 border-dashed border-[#FF5A2A] rounded-2xl">
+                <p className="text-base font-semibold text-[#FF5A2A] mb-4">
                   Teste agora: Envie uma mensagem pro seu número e veja a mágica acontecer ✨
                 </p>
                 <p className="text-xl font-bold text-[#111827] mb-4">
@@ -539,7 +539,7 @@ export default function Onboarding() {
               <div className="pt-8">
                 <Button
                   onClick={() => setLocation("/dashboard")}
-                  className="h-14 px-12 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-lg font-semibold rounded-xl"
+                  className="h-14 px-12 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-lg font-semibold rounded-xl"
                 >
                   🚀 Ir para o Dashboard
                 </Button>

@@ -64,7 +64,7 @@ export default function Register() {
       <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-12">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <div className="text-3xl font-bold text-[#2563EB]">JáRespondi</div>
+          <div className="text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
         </div>
 
         {/* Headline */}
@@ -85,7 +85,7 @@ export default function Register() {
               placeholder="João Silva"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
               required
             />
           </div>
@@ -101,7 +101,7 @@ export default function Register() {
               placeholder="seu@email.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
               required
             />
           </div>
@@ -121,7 +121,7 @@ export default function Register() {
                 onChange={(e) =>
                   setFormData({ ...formData, phone: formatPhone(e.target.value) })
                 }
-                className="h-11 pl-12 pr-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+                className="h-11 pl-12 pr-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
                 required
               />
             </div>
@@ -139,7 +139,7 @@ export default function Register() {
                 placeholder="••••••••••••"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="h-11 px-4 pr-12 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+                className="h-11 px-4 pr-12 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
                 required
               />
               <button
@@ -201,11 +201,11 @@ export default function Register() {
             />
             <label htmlFor="terms" className="text-sm text-[#6B7280] cursor-pointer leading-relaxed">
               Aceito os{" "}
-              <a href="#" className="text-[#2563EB] underline">
+              <a href="#" className="text-[#FF5A2A] underline">
                 Termos de Uso
               </a>{" "}
               e{" "}
-              <a href="#" className="text-[#2563EB] underline">
+              <a href="#" className="text-[#FF5A2A] underline">
                 Política de Privacidade
               </a>
             </label>
@@ -214,7 +214,7 @@ export default function Register() {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full h-11 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-base font-semibold rounded-lg"
+            className="w-full h-11 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base font-semibold rounded-lg"
           >
             Criar Conta Grátis
           </Button>
@@ -263,7 +263,7 @@ export default function Register() {
           <p className="text-sm text-[#6B7280]">
             Já tem uma conta?{" "}
             <Link href="/login">
-              <a className="text-[#2563EB] font-medium hover:underline">Fazer login</a>
+              <a className="text-[#FF5A2A] font-medium hover:underline">Fazer login</a>
             </Link>
           </p>
         </div>

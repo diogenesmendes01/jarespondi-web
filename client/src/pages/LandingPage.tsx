@@ -217,7 +217,7 @@ export default function LandingPage() {
               </Button>
             </Link>
             <Link href="/register">
-              <Button className="h-9 px-5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
+              <Button className="h-9 px-5 bg-[#FF5A2A] hover:bg-[#E4491F] text-white">
                 Começar Grátis
               </Button>
             </Link>
@@ -238,7 +238,7 @@ export default function LandingPage() {
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <Link href="/register">
-                  <Button className="h-12 px-8 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-lg font-semibold">
+                  <Button className="h-12 px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-lg font-semibold">
                     <Rocket className="mr-2 h-5 w-5" />
                     Responder Agora
                   </Button>
@@ -328,7 +328,7 @@ export default function LandingPage() {
           <div className="max-w-3xl mx-auto space-y-16">
             {steps.map((step, index) => (
               <div key={index} className="flex gap-8 items-start">
-                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#2563EB] flex items-center justify-center">
+                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#FF5A2A] flex items-center justify-center">
                   <span className="text-[32px] font-bold text-white">{step.number}</span>
                 </div>
                 <div className="flex-1">
@@ -390,7 +390,7 @@ export default function LandingPage() {
                 key={index}
                 className={`relative p-8 rounded-2xl ${
                   plan.popular
-                    ? "border-2 border-[#2563EB] shadow-lg"
+                    ? "border-2 border-[#FF5A2A] shadow-lg"
                     : "border-2 border-[#E5E7EB]"
                 }`}
               >
@@ -421,7 +421,7 @@ export default function LandingPage() {
                 <Button
                   className={`w-full h-11 ${
                     plan.popular
-                      ? "bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
+                      ? "bg-[#FF5A2A] hover:bg-[#E4491F] text-white"
                       : "bg-transparent border border-[#E5E7EB] text-[#111827] hover:bg-[#F9FAFB]"
                   }`}
                 >
@@ -467,7 +467,7 @@ export default function LandingPage() {
             Pronto para Automatizar Seu Atendimento?
           </h2>
           <Link href="/register">
-            <Button className="h-14 px-12 bg-white text-[#2563EB] hover:bg-gray-100 text-lg font-semibold hover:scale-105 transition-transform">
+            <Button className="h-14 px-12 bg-white text-[#FF5A2A] hover:bg-gray-100 text-lg font-semibold hover:scale-105 transition-transform">
               Começar Gratuitamente Agora
             </Button>
           </Link>

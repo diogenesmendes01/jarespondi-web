@@ -31,7 +31,7 @@ export default function Login() {
       <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-12">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <div className="text-3xl font-bold text-[#2563EB]">JáRespondi</div>
+          <div className="text-3xl font-bold text-[#FF5A2A]">JáRespondi</div>
         </div>
 
         {/* Headline */}
@@ -52,7 +52,7 @@ export default function Login() {
               placeholder="seu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+              className="h-11 px-4 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
               required
             />
           </div>
@@ -69,7 +69,7 @@ export default function Login() {
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="h-11 px-4 pr-12 border-[#E5E7EB] rounded-lg text-base focus:border-[#2563EB] focus:ring-[#2563EB] focus:ring-opacity-10"
+                className="h-11 px-4 pr-12 border-[#E5E7EB] rounded-lg text-base focus:border-[#FF5A2A] focus:ring-[#FF5A2A] focus:ring-opacity-10"
                 required
               />
               <button
@@ -105,7 +105,7 @@ export default function Login() {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full h-11 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-base font-semibold rounded-lg"
+            className="w-full h-11 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base font-semibold rounded-lg"
           >
             Entrar
           </Button>
@@ -152,14 +152,14 @@ export default function Login() {
         {/* Links */}
         <div className="mt-6 text-center space-y-4">
           <Link href="/forgot-password">
-            <a className="text-sm text-[#2563EB] hover:underline">
+            <a className="text-sm text-[#FF5A2A] hover:underline">
               Esqueceu a senha?
             </a>
           </Link>
           <p className="text-sm text-[#6B7280]">
             Não tem conta?{" "}
             <Link href="/register">
-              <a className="text-[#2563EB] font-medium hover:underline">
+              <a className="text-[#FF5A2A] font-medium hover:underline">
                 Criar conta grátis
               </a>
             </Link>

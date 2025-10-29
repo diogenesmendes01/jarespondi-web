@@ -162,3 +162,5 @@
 - [x] Atualizar design system completo com novas cores (laranja #FF5A2A, marrom #2A1A16, bege #FFF9F6)
 - [ ] Atualizar todas as páginas com novo design system
 - [x] Ajustar tipografia para ser mais direta e focada em resultados
+
+- [x] Remover TODOS os azuis do projeto e substituir por laranja #FF5A2A
