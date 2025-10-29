@@ -36,6 +36,7 @@ export default function CRMNew() {
   const [selectedContact, setSelectedContact] = useState<any>(null);
   const [activeTab, setActiveTab] = useState<"info" | "chat" | "ia" | "activity" | "finance" | "notes">("ia");
   const [showQuickActions, setShowQuickActions] = useState(false);
+  const [showDiscussion, setShowDiscussion] = useState(false);
 
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
@@ -793,13 +794,20 @@ Motivação: Casamento em março`,
                 )}
               </div>
 
-              {/* Quick Actions Button */}
-              <div className="p-4 border-t border-[#E5E7EB]">
+              {/* Action Buttons */}
+              <div className="p-4 border-t border-[#E5E7EB] space-y-2">
                 <Button
                   onClick={() => setShowQuickActions(!showQuickActions)}
                   className="w-full bg-[#2563EB] hover:bg-[#1D4ED8]"
                 >
                   ⚡ Ações Rápidas
+                </Button>
+                <Button
+                  onClick={() => setShowDiscussion(!showDiscussion)}
+                  variant="outline"
+                  className="w-full"
+                >
+                  💬 {showDiscussion ? "Fechar" : "Abrir"} Discussão Interna
                 </Button>
               </div>
             </div>
@@ -869,7 +877,7 @@ Motivação: Casamento em março`,
       )}
 
       {/* Internal Discussion Sidebar (could be a separate component) */}
-      {selectedContact && (
+      {selectedContact && showDiscussion && (
         <div className="w-96 bg-white border-l border-[#E5E7EB] flex flex-col">
           <div className="p-4 border-b border-[#E5E7EB]">
             <h3 className="text-lg font-semibold text-[#111827]">

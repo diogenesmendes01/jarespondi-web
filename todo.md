@@ -148,3 +148,7 @@
 ## Branding
 - [x] Atualizar todas as páginas para usar logo JáRespondi
 - [x] Mudar nome de JáResponde para JáRespondi em todos os lugares
+
+
+## Bugs
+- [x] CRM: Discussão interna aparecendo automaticamente - deve ser opcional (botão para abrir/fechar)
