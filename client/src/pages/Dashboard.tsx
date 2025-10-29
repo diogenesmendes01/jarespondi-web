@@ -268,14 +268,14 @@ export default function Dashboard() {
                   const Icon = action.icon;
                   return (
                     <Link key={index} href={action.path}>
-                      <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F9FAFB] transition-colors">
+                      <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F9FAFB] transition-colors cursor-pointer">
                         <div className="w-10 h-10 bg-[#FFF9F6] rounded-lg flex items-center justify-center">
                           <Icon className="h-5 w-5 text-[#FF5A2A]" />
                         </div>
                         <span className="text-sm font-medium text-[#111827]">
                           {action.label}
                         </span>
-                      </a>
+                      </div>
                     </Link>
                   );
                 })}
