@@ -23,6 +23,7 @@ import { Link, useLocation } from "wouter";
 export default function Dashboard() {
   const [location] = useLocation();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
@@ -99,11 +100,21 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex">
+      {/* Mobile Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
       <aside
         className={`${
           sidebarCollapsed ? "w-20" : "w-64"
-        } bg-white border-r border-[#E5E7EB] transition-all duration-300 flex flex-col`}
+        } bg-white border-r border-[#E5E7EB] transition-all duration-300 flex flex-col fixed md:relative h-full z-50 ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        }`}
       >
         {/* Logo */}
         <div className="h-16 border-b border-[#E5E7EB] flex items-center justify-center px-4">
@@ -156,24 +167,34 @@ export default function Dashboard() {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col w-full md:w-auto">
         {/* Header */}
-        <header className="h-16 bg-white border-b border-[#E5E7EB] flex items-center justify-between px-8">
-          <div className="flex items-center gap-4">
+        <header className="h-16 bg-white border-b border-[#E5E7EB] flex items-center justify-between px-4 md:px-8">
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-[#6B7280] md:hidden"
+            >
+              ☰
+            </Button>
+            {/* Desktop Collapse Button */}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="text-[#6B7280]"
+              className="text-[#6B7280] hidden md:block"
             >
               ☰
             </Button>
-            <h1 className="text-xl font-semibold text-[#111827]">Dashboard</h1>
+            <h1 className="text-lg md:text-xl font-semibold text-[#111827]">Dashboard</h1>
           </div>
 
-          <div className="flex items-center gap-4">
-            {/* Search */}
-            <div className="relative">
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Search - Hidden on mobile */}
+            <div className="relative hidden md:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#9CA3AF]" />
               <input
                 type="text"
@@ -184,26 +205,26 @@ export default function Dashboard() {
 
             {/* Notifications */}
             <Button variant="ghost" size="sm" className="relative">
-              <Bell className="h-5 w-5 text-[#6B7280]" />
+              <Bell className="h-4 w-4 md:h-5 md:w-5 text-[#6B7280]" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-[#EF4444] rounded-full"></span>
             </Button>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-8 overflow-auto">
+        <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-auto">
           {/* Welcome */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-[#111827] mb-2">
-              Bem-vindo de volta! 👋
+          <div className="mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-[#111827] mb-2">
+              Bem-vindo de volta!
             </h2>
-            <p className="text-[#6B7280]">
+            <p className="text-sm md:text-base text-[#6B7280]">
               Aqui está um resumo do que está acontecendo hoje
             </p>
           </div>
 
           {/* Metrics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
             {metrics.map((metric, index) => {
               const Icon = metric.icon;
               return (
@@ -236,10 +257,10 @@ export default function Dashboard() {
             })}
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
             {/* Quick Actions */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold text-[#111827] mb-4">
+            <Card className="p-4 md:p-6">
+              <h3 className="text-base md:text-lg font-semibold text-[#111827] mb-4">
                 Ações Rápidas
               </h3>
               <div className="space-y-3">
@@ -262,8 +283,8 @@ export default function Dashboard() {
             </Card>
 
             {/* Recent Alerts */}
-            <Card className="p-6 lg:col-span-2">
-              <h3 className="text-lg font-semibold text-[#111827] mb-4">
+            <Card className="p-4 md:p-6 lg:col-span-2">
+              <h3 className="text-base md:text-lg font-semibold text-[#111827] mb-4">
                 Alertas Recentes
               </h3>
               <div className="space-y-4">
@@ -292,9 +313,9 @@ export default function Dashboard() {
           </div>
 
           {/* Chart Placeholder */}
-          <Card className="p-6 mt-6">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-[#111827]">
+          <Card className="p-4 md:p-6 mt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 md:mb-6">
+              <h3 className="text-base md:text-lg font-semibold text-[#111827]">
                 Conversas nos Últimos 7 Dias
               </h3>
               <Button variant="outline" size="sm">
