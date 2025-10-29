@@ -54,32 +54,26 @@ export default function LandingPage() {
 
   const features = [
     {
-      icon: "🤖",
       title: "IA Inteligente",
       description: "Responde igual humano. Seu cliente nem percebe.",
     },
     {
-      icon: "⚡",
       title: "Resposta Instantânea",
       description: "Atende em segundos. Cliente não espera.",
     },
     {
-      icon: "🎯",
       title: "Qualificação Automática",
       description: "IA separa quem compra de quem só pergunta.",
     },
     {
-      icon: "📊",
       title: "Analytics Completo",
       description: "Você vê tudo: quantos entraram, quantos compraram.",
     },
     {
-      icon: "🔄",
       title: "Integração Total",
       description: "Liga com seu CRM, calendário, tudo que você usa.",
     },
     {
-      icon: "🛡️",
       title: "100% Seguro",
       description: "Dados protegidos. LGPD ok.",
     },
@@ -191,7 +185,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 h-[72px] bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-12">
           <div className="flex items-center gap-8">
-            <img src="/logo.png" alt="JáRespondi" className="h-10" />
+            <img src="/logo.png" alt="JáRespondi" style={{width: '80px', height: '70px'}} />
             <nav className="hidden md:flex items-center gap-8">
               <a href="#como-funciona" className="text-[#6B7280] hover:text-[#111827] transition-colors">
                 Como Funciona
@@ -355,7 +349,6 @@ export default function LandingPage() {
                 key={index}
                 className="p-10 bg-white rounded-xl text-center hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
               >
-                <div className="text-6xl mb-5">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-[#111827] mb-3">
                   {feature.title}
                 </h3>

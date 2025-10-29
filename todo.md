@@ -164,3 +164,6 @@
 - [x] Ajustar tipografia para ser mais direta e focada em resultados
 
 - [x] Remover TODOS os azuis do projeto e substituir por laranja #FF5A2A
+
+- [x] Corrigir duplicação de style no logo
+- [x] Remover emojis das features (deixar mais profissional)
