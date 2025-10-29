@@ -195,3 +195,5 @@
 - [x] Bug Onboarding: Logo não está usando imagem real (JaRespondi-logo.png)
 - [x] Bug Onboarding: Vídeo muito grande em mobile
 - [x] Bug Onboarding: Textos não adaptados corretamente para mobile
+
+- [x] Mover indicador de progresso do header para entre header e conteúdo

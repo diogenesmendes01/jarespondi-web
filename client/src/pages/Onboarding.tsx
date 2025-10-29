@@ -94,7 +94,20 @@ export default function Onboarding() {
           {/* Logo */}
           <img src="/JaRespondi-logo.png" alt="JáRespondi" className="h-12 md:h-14" />
 
-          {/* Progress Indicator */}
+          {/* Skip Button */}
+          <Button
+            variant="ghost"
+            onClick={handleSkip}
+            className="text-sm md:text-base font-medium text-[#6B7280] hover:text-[#111827]"
+          >
+            Pular Tutorial
+          </Button>
+        </div>
+      </div>
+
+      {/* Progress Indicator */}
+      <div className="bg-white border-b border-[#E5E7EB] py-4 md:py-6">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-2">
               {Array.from({ length: totalSteps }).map((_, index) => {
@@ -126,19 +139,10 @@ export default function Onboarding() {
                 );
               })}
             </div>
-            <p className="text-xs text-[#6B7280] mt-2">
+            <p className="text-xs md:text-sm text-[#6B7280] mt-2">
               Passo {currentStep} de {totalSteps}
             </p>
           </div>
-
-          {/* Skip Button */}
-          <Button
-            variant="ghost"
-            onClick={handleSkip}
-            className="text-base font-medium text-[#6B7280] hover:text-[#111827]"
-          >
-            Pular Tutorial
-          </Button>
         </div>
       </div>
 
