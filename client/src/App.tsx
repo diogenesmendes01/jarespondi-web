@@ -9,8 +9,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import WhatsAppAgents from "./pages/WhatsAppAgents";
 import Conversas from "./pages/Conversas";
-import CRM from "./pages/CRM";
+import CRMNew from "./pages/CRMNew";
 import Campanhas from "./pages/Campanhas";
 import Analytics from "./pages/Analytics";
 import Configuracoes from "./pages/Configuracoes";
@@ -24,8 +25,9 @@ function Router() {
       <Route path={"/register"} component={Register} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/dashboard/whatsapp"} component={WhatsAppAgents} />
       <Route path={"/conversas"} component={Conversas} />
-      <Route path={"/crm"} component={CRM} />
+      <Route path={"/crm"} component={CRMNew} />
       <Route path={"/campanhas"} component={Campanhas} />
       <Route path={"/analytics"} component={Analytics} />
       <Route path={"/configuracoes"} component={Configuracoes} />

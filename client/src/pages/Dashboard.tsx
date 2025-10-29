@@ -110,7 +110,7 @@ export default function Dashboard() {
           {sidebarCollapsed ? (
             <div className="text-2xl font-bold text-[#2563EB]">J</div>
           ) : (
-            <div className="text-xl font-bold text-[#2563EB]">JáResponde</div>
+            <div className="text-xl font-bold text-[#2563EB]">JáRespondi</div>
           )}
         </div>
 

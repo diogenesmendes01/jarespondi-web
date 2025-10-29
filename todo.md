@@ -64,3 +64,87 @@
 - [x] Criar rota /dashboard
 - [x] Criar página Dashboard completa com métricas
 - [x] Adicionar navegação lateral (sidebar)
+
+
+## Nova Arquitetura: Múltiplos Números e Agentes
+
+### Página: Gerenciamento WhatsApp & Agentes (/dashboard/whatsapp)
+- [ ] Lista de números WhatsApp conectados
+- [ ] Expandir/colapsar cada número
+- [ ] Ver agentes ativos por número
+- [ ] Botão "Adicionar Número"
+- [ ] Botão "Adicionar Agente" por número
+- [ ] Status de conexão (conectado/desconectado)
+- [ ] Tipo de conexão (Web/API)
+
+### Modal: Configurar Agente (6 passos)
+- [x] Step 1: Básico (nome, descrição, número)
+- [x] Step 2: Triggers (primeira mensagem, palavras-chave, horário, tag CRM, score, status pipeline)
+- [x] Step 3: Personalidade (system prompt, temperatura, max tokens, templates)
+- [x] Step 4: Ações Automáticas (atualizar CRM, agendar follow-ups, transferir agente, integrar calendário, criar tarefas, notificar humano)
+- [x] Step 5: Handoff (quando passar pra humano, mensagem ao transferir, notificar quem)
+- [x] Step 6: Revisão (resumo de tudo, testar agente, salvar ativo/inativo)
+
+### Sistema de Roteamento Inteligente
+- [ ] Analisar mensagem do cliente
+- [ ] Verificar triggers de cada agente
+- [ ] Sistema de prioridade (match exato > prioridade manual > contexto > fallback)
+- [ ] Ativar agente correto
+
+### CRM Expandido - Nova Sidebar
+
+#### Aba: 🤖 IA
+- [x] Resumo automático da IA (contexto, interesse, objeções, motivação)
+- [x] Próximas ações sugeridas (com botões de ação)
+- [x] Alertas (mencionou concorrente, sem resposta, probabilidade conversão)
+- [x] Intenção detectada (primária e secundária)
+- [x] Sentimento (barra de progresso, tendência)
+
+#### Aba: 📝 Notas
+- [x] Campo para adicionar nota (privada/pública)
+- [x] Botão "IA: Gerar Resumo"
+- [x] Notas fixadas (com opção de fixar/desfixar)
+- [x] Notas regulares (timeline de todas as notas)
+- [x] Notas automáticas da IA
+- [x] Notas da equipe
+
+#### Aba: 💵 Financeiro
+- [x] Total gasto, ticket médio, número de compras
+- [x] Histórico de transações
+- [x] Proposta atual (valor, status, validade)
+- [x] Botões: Ver nota fiscal, Ver proposta, Editar, Reenviar
+
+#### Aba: 📊 Atividade
+- [x] Timeline completa (já existe, manter)
+
+### Ações Rápidas no CRM
+- [x] 📧 Enviar Mensagem
+- [x] 📞 Ligar (em breve)
+- [x] 📅 Agendar Follow-up
+- [x] 📝 Criar Tarefa
+- [x] 🎯 Mudar Status
+- [x] 🏷️ Adicionar Tag
+- [x] 💰 Nova Proposta
+- [x] 🤖 Atribuir para IA (modal com instrução específica)
+- [x] 👤 Transferir p/ Humano
+- [ ] 📋 Duplicar Contato
+- [ ] 🗑️ Arquivar Contato
+
+### Modal: Instruir IA
+- [ ] Campo de texto para instrução específica
+- [ ] Quando executar (agora / quando cliente responder)
+- [ ] Qual agente deve executar (dropdown)
+- [ ] Checkbox: Notificar-me quando IA executar
+
+### Discussão Interna (tipo Slack)
+- [x] Lista de comentários da equipe
+- [x] Comentários automáticos da IA
+- [x] Campo para adicionar comentário
+- [x] Sistema de menções (@usuario)
+- [x] Reações (👍, etc)
+- [x] Botão "Executar sugestão" em comentários da IA
+- [x] Anexar arquivos
+
+## Branding
+- [x] Atualizar todas as páginas para usar logo JáRespondi
+- [x] Mudar nome de JáResponde para JáRespondi em todos os lugares

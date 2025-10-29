@@ -64,7 +64,7 @@ export default function Register() {
       <div className="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-12">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <div className="text-3xl font-bold text-[#2563EB]">JáResponde</div>
+          <div className="text-3xl font-bold text-[#2563EB]">JáRespondi</div>
         </div>
 
         {/* Headline */}

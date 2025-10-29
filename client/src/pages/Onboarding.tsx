@@ -92,7 +92,7 @@ export default function Onboarding() {
       <div className="h-20 bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-12">
           {/* Logo */}
-          <div className="text-2xl font-bold text-[#2563EB]">JáResponde</div>
+          <div className="text-2xl font-bold text-[#2563EB]">JáRespondi</div>
 
           {/* Progress Indicator */}
           <div className="flex flex-col items-center">
@@ -150,7 +150,7 @@ export default function Onboarding() {
             <div className="text-center space-y-8">
               <div className="text-8xl mb-8">🎉</div>
               <h1 className="text-4xl font-bold text-[#111827]">
-                Bem-vindo ao JáResponde! 🎉
+                Bem-vindo ao JáRespondi! 🎉
               </h1>
               <p className="text-xl text-[#6B7280]">
                 Em menos de 5 minutos você terá seu assistente IA funcionando

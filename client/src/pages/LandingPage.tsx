@@ -191,7 +191,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 h-[72px] bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-12">
           <div className="flex items-center gap-8">
-            <div className="text-2xl font-bold text-[#2563EB]">JáResponde</div>
+            <img src="/logo.png" alt="JáRespondi" className="h-10" />
             <nav className="hidden md:flex items-center gap-8">
               <a href="#como-funciona" className="text-[#6B7280] hover:text-[#111827] transition-colors">
                 Como Funciona
@@ -234,7 +234,7 @@ export default function LandingPage() {
                 Atendimento Instantâneo, Vendas Automáticas 24/7
               </h1>
               <p className="text-xl text-[#6B7280] mb-8">
-                Seu cliente não espera. JáResponde.
+                Seu cliente não espera. JáRespondi.
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <Link href="/register">
@@ -482,7 +482,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-12">
           <div className="grid md:grid-cols-5 gap-8 mb-12">
             <div>
-              <div className="text-2xl font-bold mb-4">JáResponde</div>
+              <div className="text-2xl font-bold mb-4">JáRespondi</div>
               <p className="text-sm text-[#9CA3AF]">
                 Atendimento inteligente 24/7 com IA
               </p>
@@ -526,7 +526,7 @@ export default function LandingPage() {
           </div>
           <div className="pt-6 border-t border-[#374151] flex justify-between items-center">
             <p className="text-sm text-[#6B7280]">
-              © 2024 JáResponde. Todos os direitos reservados.
+              © 2024 JáRespondi. Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
               {["Twitter", "LinkedIn", "Instagram"].map((social) => (
