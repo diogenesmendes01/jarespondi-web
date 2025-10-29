@@ -184,3 +184,7 @@
 ## 🐛 Bugs Conhecidos
 
 (Nenhum bug conhecido no momento - todos corrigidos!)
+
+## 🐛 Bugs Reportados
+
+- [x] Overlay dos modais muito transparente - ajustado para 80% de opacidade
