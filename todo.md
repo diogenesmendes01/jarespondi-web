@@ -190,3 +190,8 @@
 - [x] Melhorar responsividade da página de Login
 - [x] Melhorar responsividade da página de Cadastro
 - [x] Melhorar responsividade da página de Onboarding
+
+- [x] Bug Onboarding: Número da etapa aparecendo sobre o footer
+- [x] Bug Onboarding: Logo não está usando imagem real (JaRespondi-logo.png)
+- [x] Bug Onboarding: Vídeo muito grande em mobile
+- [x] Bug Onboarding: Textos não adaptados corretamente para mobile

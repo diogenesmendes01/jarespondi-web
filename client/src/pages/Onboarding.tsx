@@ -92,7 +92,7 @@ export default function Onboarding() {
       <div className="h-16 md:h-20 bg-white border-b border-[#E5E7EB]">
         <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
-          <div className="text-xl md:text-2xl font-bold text-[#FF5A2A]">JáRespondi</div>
+          <img src="/JaRespondi-logo.png" alt="JáRespondi" className="h-12 md:h-14" />
 
           {/* Progress Indicator */}
           <div className="flex flex-col items-center">
@@ -147,43 +147,43 @@ export default function Onboarding() {
         <div className="max-w-4xl mx-auto">
           {/* Step 1: Welcome */}
           {currentStep === 1 && (
-            <div className="text-center space-y-8">
-              <div className="text-8xl mb-8">🎉</div>
-              <h1 className="text-4xl font-bold text-[#111827]">
+            <div className="text-center space-y-6 md:space-y-8">
+              <div className="text-5xl md:text-8xl mb-4 md:mb-8">🎉</div>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] px-4">
                 Bem-vindo ao JáRespondi! 🎉
               </h1>
-              <p className="text-xl text-[#6B7280]">
+              <p className="text-base md:text-lg lg:text-xl text-[#6B7280] px-4">
                 Em menos de 5 minutos você terá seu assistente IA funcionando
               </p>
 
               {/* Video Placeholder */}
-              <div className="w-[600px] h-[340px] mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
+              <div className="w-full max-w-[600px] aspect-video mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">▶️</div>
-                  <p className="text-[#6B7280]">Vídeo de Introdução</p>
+                  <div className="text-4xl md:text-6xl mb-4">▶️</div>
+                  <p className="text-sm md:text-base text-[#6B7280]">Vídeo de Introdução</p>
                 </div>
               </div>
 
               {/* Checklist */}
-              <div className="space-y-3 text-left max-w-md mx-auto">
-                <div className="flex items-center gap-3 text-lg text-[#6B7280]">
-                  <Check className="h-6 w-6 text-[#10B981]" />
+              <div className="space-y-3 text-left max-w-md mx-auto px-4">
+                <div className="flex items-center gap-3 text-sm md:text-base lg:text-lg text-[#6B7280]">
+                  <Check className="h-5 w-5 md:h-6 md:w-6 text-[#10B981] flex-shrink-0" />
                   <span>WhatsApp conectado</span>
                 </div>
-                <div className="flex items-center gap-3 text-lg text-[#6B7280]">
-                  <Check className="h-6 w-6 text-[#10B981]" />
+                <div className="flex items-center gap-3 text-sm md:text-base lg:text-lg text-[#6B7280]">
+                  <Check className="h-5 w-5 md:h-6 md:w-6 text-[#10B981] flex-shrink-0" />
                   <span>IA configurada</span>
                 </div>
-                <div className="flex items-center gap-3 text-lg text-[#6B7280]">
-                  <Check className="h-6 w-6 text-[#10B981]" />
+                <div className="flex items-center gap-3 text-sm md:text-base lg:text-lg text-[#6B7280]">
+                  <Check className="h-5 w-5 md:h-6 md:w-6 text-[#10B981] flex-shrink-0" />
                   <span>Primeiro cliente sendo atendido</span>
                 </div>
               </div>
 
-              <div className="pt-8">
+              <div className="pt-6 md:pt-8">
                 <Button
                   onClick={handleNext}
-                  className="h-11 px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-base font-semibold"
+                  className="h-10 md:h-11 px-6 md:px-8 bg-[#FF5A2A] hover:bg-[#E4491F] text-white text-sm md:text-base font-semibold"
                 >
                   Começar →
                 </Button>
