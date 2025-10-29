@@ -3,12 +3,6 @@ import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  LayoutDashboard,
-  MessageSquare,
-  Users,
-  Send,
-  BarChart3,
-  Settings,
   Search,
   Filter,
   Plus,
@@ -29,9 +23,11 @@ import {
   AlertCircle,
   ThumbsUp,
   Paperclip,
+  Users,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
+import { dashboardMenuItems } from "@/lib/menuItems";
 
 export default function CRMNew() {
 
@@ -46,14 +42,7 @@ export default function CRMNew() {
     setActiveTab("ia");
   }, [selectedContact]);
 
-  const menuItems = [
-    { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
-    { icon: MessageSquare, label: "Conversas", path: "/conversas" },
-    { icon: Users, label: "CRM", path: "/crm" },
-    { icon: Send, label: "Campanhas", path: "/campanhas" },
-    { icon: BarChart3, label: "Analytics", path: "/analytics" },
-    { icon: Settings, label: "Configurações", path: "/configuracoes" },
-  ];
+
 
   const contacts = [
     {
@@ -242,7 +231,7 @@ Motivação: Casamento em março`,
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex">
       {/* Sidebar */}
-      <Sidebar menuItems={menuItems} />
+      <Sidebar menuItems={dashboardMenuItems} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">

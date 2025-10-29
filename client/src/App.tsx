@@ -27,10 +27,10 @@ function Router() {
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/dashboard/whatsapp"} component={WhatsAppAgents} />
-      <Route path={"/conversas"} component={Conversas} />
-      <Route path={"/crm"} component={CRMNew} />
-      <Route path={"/campanhas"} component={Campanhas} />
-      <Route path={"/analytics"} component={Analytics} />
+      <Route path={"/dashboard/conversas"} component={Conversas} />
+      <Route path={"/dashboard/crm"} component={CRMNew} />
+      <Route path={"/dashboard/campanhas"} component={Campanhas} />
+      <Route path={"/dashboard/analytics"} component={Analytics} />
       <Route path={"/dashboard/configuracoes"} component={Configuracoes} />
       <Route path={"/dashboard/base-conhecimento"} component={BaseConhecimento} />
       <Route path={"/404"} component={NotFound} />

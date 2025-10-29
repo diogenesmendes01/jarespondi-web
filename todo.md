@@ -80,6 +80,9 @@
   - [x] Login
   - [x] Register
 - [x] Corrigir bug de aiConfig retornando undefined (Settings page)
+- [x] Padronizar todas as rotas com prefixo /dashboard/
+- [x] Criar arquivo menuItems.ts com navegação padronizada
+- [x] Atualizar todas as páginas para usar dashboardMenuItems
 
 ### Database Schema
 - [x] Tabela de usuários

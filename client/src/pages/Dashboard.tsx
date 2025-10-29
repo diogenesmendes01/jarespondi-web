@@ -3,12 +3,6 @@ import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  LayoutDashboard,
-  MessageSquare,
-  Users,
-  Send,
-  BarChart3,
-  Settings,
   Bell,
   Search,
   ChevronDown,
@@ -18,20 +12,17 @@ import {
   CheckCircle,
   Clock,
   Zap,
+  Send,
+  Users,
+  Settings,
+  MessageSquare,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { dashboardMenuItems } from "@/lib/menuItems";
 
 export default function Dashboard() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const menuItems = [
-    { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
-    { icon: MessageSquare, label: "Conversas", path: "/conversas" },
-    { icon: Users, label: "CRM", path: "/crm" },
-    { icon: Send, label: "Campanhas", path: "/campanhas" },
-    { icon: BarChart3, label: "Analytics", path: "/analytics" },
-    { icon: Settings, label: "Configurações", path: "/configuracoes" },
-  ];
 
   const metrics = [
     {
@@ -108,7 +99,7 @@ export default function Dashboard() {
       )}
 
       {/* Sidebar */}
-      <Sidebar menuItems={menuItems} />
+      <Sidebar menuItems={dashboardMenuItems} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col w-full md:w-auto">
