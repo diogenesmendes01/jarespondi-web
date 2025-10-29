@@ -176,3 +176,5 @@
 
 - [x] Corrigir borda laranja animada nos cards de features (remover div interna, aplicar animação corretamente)
 - [x] Implementar carrossel responsivo para pricing cards (2 cards + setas em mobile)
+
+- [x] Bug: Setas de navegação do carrossel de preços não estão aparecendo em mobile

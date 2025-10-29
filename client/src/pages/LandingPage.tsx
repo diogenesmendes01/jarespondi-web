@@ -408,7 +408,7 @@ export default function LandingPage() {
               </button>
             </div>
           </div>
-          <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="hidden md:grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <Card
                 key={index}
